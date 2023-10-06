@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Script from "next/script";
+import Head from 'next/head'
 
 
 export default function Home() {
@@ -8,13 +8,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <Script src="https://kit.fontawesome.com/fefbaa8eb2.js"
-        onLoad={() => {
-          console.log('Script has loaded')
-        }}
-      /> */}
-
-
+      <h1>Home</h1>
       <Link href="/place">place</Link>
     </>
   )
