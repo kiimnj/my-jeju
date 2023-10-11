@@ -5,50 +5,84 @@ import Link from "next/link";
 import Card from './card';
 import { useEffect, useState } from "react";
 
+
 let page = 1;
-const api = process.env.NEXT_PUBLIC_API_KEY
-const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&page=${page}`
-const location = "home"
-
-export default function Index(props) {
+export default function Index() {
+    const location = "home"
     const [data, setData] = useState([]);
-    const [skip, setSkip] = useState(20);
-    let cnt = 20;
-    let limit = 20;
+    let [skip, setSkip] = useState(20);
+    // let[isLoaded, setIsLoaded] = useState()
+    const limit = 20;   // 고정단위
 
-
+    
+    
+    /** 비짓제주 api 전체 페이지 가져오기 */
+    let addData = [];   // 여기에 비동기로 데이터 축적
+    
     useEffect(() => {
-        getData(url)
-        .then(data => {
-            let newData = data.items;
-            setData(newData)
-        })
-        .catch(error => console.log(error))
-    }, [skip])
-    let items = data.slice((skip === 20 ? 0 : skip - 20), skip);
-
-    const pageRight = () => {
-        if(skip === 100) {
-            setSkip(20)
-            cnt = 20;
-            page++;
-        } else {
-            cnt += limit
-            setSkip(cnt);
-        }
+        const api = process.env.NEXT_PUBLIC_API_KEY
         
-        console.log(skip)
+    
+        for (let i = 1; i < 3; i++) {
+            // let i = 1
+            const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&page=${i}`
+            getData(url)
+            .then((resp) => {
+                let items = resp.items
+                let newData = items.filter(item => item.alltag != null); // data에서 유효한 데이터만 필터링
+                return newData;
+            })
+            .then(newData => {
+                addData.push(...newData)
+                setData(addData);
+            })        
+        }
+
+    }, [])
+    
+    // console.log(data.length)
+    console.log(skip, page)
+    
+
+    // 페이지 분할
+    let list;
+    if(skip === limit) {                // 첫페이지일 경우
+        list = data.slice(0, skip);
+    } else if(skip > data.length) {     // 마지막 페이지일 경우
+        list = data.slice(skip - limit)
+    } else {                            // 첫페이지도, 마지막 페이지도아닐 경우
+        list = data.slice(skip - limit, skip);
+    }
+
+
+    // 페이지 번호
+    let pageCnt = 10;   // 구간별 페이지 갯수
+    let pages = [];     // 구간별 페이지 번호
+    let n = (data.length / limit) < 10 ? 10 : Math.ceil(data.length / limit);
+    for(let i = 1; i < n + 1; i++) {
+        pages.push(i)
+    }
+
+    let pageRight = () => {
+        if(limit * page < data.length) {
+            page++;
+            setSkip(limit * page)
+        }
     }
 
     const pageLeft = () => {
-        if(skip === 0 && page != 1) {
-            setSkip(100);
-            cnt = 100;
-            page--;
+        if(skip != limit) {
+            setSkip(skip -= limit)
         } else {
-            cnt -= limit;
-            setSkip(cnt);
+            setSkip(limit)
         }
+    }
+
+    const changePage = (e) => {
+        let num = e.target.value
+        page = num;
+        setSkip(limit * page)
+        console.log(num)
     }
 
     return(
@@ -59,43 +93,49 @@ export default function Index(props) {
             </div>
 
             <ul id="quick" className="nav">
-                <li>
-                    <div className="qmenu"></div> <p>공지사항</p>
-                </li>
-                <li>
-                    <div className="qmenu"></div> <p>커뮤니티</p>
-                </li>
-                <li>
-                    <div class="qmenu"></div> <p>고객센터</p>
-                </li>
-                <li>
-                    <div class="qmenu"></div> <p>나의여행</p>
-                </li>
-                <li>
-                    <div class="qmenu"></div> <p>공지사항</p>
-                </li>
+                <li><div className="qmenu"></div> <p>공지사항</p></li>
+                <li><div className="qmenu"></div> <p>커뮤니티</p></li>
+                <li><div className="qmenu"></div> <p>나의지도</p></li>
+                <li><div className="qmenu"></div> <p>고객센터</p></li>
+                <li><div className="qmenu"></div> <p>공지사항</p></li>
             </ul>
 
             <hr/>
 
             
             <div id="cardContainer">
-                {items.map(item => (
+                {list.map(item => (
                     <div key={item.contentsid}>
                         <Link href={`/place/${item.contentsid}`}>
                         <Card 
                             id={item.contentsid}
                             title={item.title}
-                            photo={item.repPhoto.photoid.imgpath}
-                            thumb={item.repPhoto.photoid.thumbnailpath}
+                            photo={item.repPhoto === null ? null : item.repPhoto.photoid.imgpath}
+                            thumb={item.repPhoto === null ? null : item.repPhoto.photoid.thumbnailpath}
                             tag={item.tag}
                             script={item.introduction}
                         />
                         </Link>
                     </div>
                 ))}
-                <button onClick={pageLeft}>left</button>
-                <button onClick={pageRight}>right</button>
+                {(list.length % 2 == 1 && skip >= data.length) &&
+                    <div className="emptyCard"></div>
+                }
+                
+            </div>
+
+            <div className="btnContainer">
+                    <button onClick={pageLeft} className="btn  btn-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-left-fill" viewBox="0 0 16 16"><path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/></svg>    
+                    </button>
+                <div class="btn-group me-2" role="group" aria-label="First group">
+                    {pages.map((num) => (
+                        <button key={num} value={num} onClick={(e) => changePage(e)} type="button" className="btn light">{num}</button>
+                        ))}
+                </div>
+                <button onClick={pageRight} className="btn  btn-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
+                </button>
             </div>
         </>
     )

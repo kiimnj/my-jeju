@@ -71,3 +71,19 @@
     position: absolute;
     bottom: 5px;
 }
+.emptyCard {
+    width: 170px;
+    height: 270px;
+    background-color: white;
+}
+.btnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn-group {
+    margin-left: 0.5rem;
+}
+.btn {
+    padding: 7px !important;
+}
