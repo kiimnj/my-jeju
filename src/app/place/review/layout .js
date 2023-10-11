@@ -1,9 +1,9 @@
-export default function RootLayout({ children }) {
+import './place.css';
+
+export default function ReviewLayout({ children }) {
     return (
-      <div>
-  
+      <div id="placeContainer">
           {children}
-  
       </div>
     )
   }

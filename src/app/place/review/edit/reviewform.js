@@ -1,12 +1,10 @@
-import React from 'react'
-
-export default function page() {
+export default function ReviewForm() {
   return (
-    <div>
+    <div id="reviewForm">
         <form>
-                <InputScore />
-                <InputReview />
-                <ReveiwButton />
+            <input type="text" placeholder="리뷰를 작성하세요."></input>
+            <br />
+            <button className="reviewButton">리뷰 등록하기</button>
         </form>
     </div>
   )
