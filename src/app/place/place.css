@@ -71,3 +71,9 @@
     position: absolute;
     bottom: 5px;
 }
+
+.emptyCard {
+    width: 170px;
+    height: 270px;
+    background-color: white;
+}
