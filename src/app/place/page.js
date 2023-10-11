@@ -6,22 +6,24 @@ import Card from './card';
 import { useEffect, useState } from "react";
 
 
-export default function Index(props) {
+let page = 1;
+export default function Index() {
+    const location = "home"
     const [data, setData] = useState([]);
-    let [skip, setSkip] = useState(26);
-    let[isLoaded, setIsLoaded] = useState()
-    let limit = 26;
+    let [skip, setSkip] = useState(20);
+    // let[isLoaded, setIsLoaded] = useState()
+    const limit = 20;   // 고정단위
 
-    let addData = [];
     
     
     /** 비짓제주 api 전체 페이지 가져오기 */
-    const api = process.env.NEXT_PUBLIC_API_KEY
-    const location = "home"
+    let addData = [];   // 여기에 비동기로 데이터 축적
     
     useEffect(() => {
-
-        for (let i = 1; i < 53; i++) {
+        const api = process.env.NEXT_PUBLIC_API_KEY
+        
+    
+        for (let i = 1; i < 3; i++) {
             // let i = 1
             const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&page=${i}`
             getData(url)
@@ -32,16 +34,15 @@ export default function Index(props) {
             })
             .then(newData => {
                 addData.push(...newData)
-                
-            })            
-            .finally(() => setData(addData))   
+                setData(addData);
+            })        
         }
+
     }, [])
     
-
-    console.log("data:", data.length)
-    console.log(skip)
-    // console.log(skip)
+    // console.log(data.length)
+    console.log(skip, page)
+    
 
     // 페이지 분할
     let list;
@@ -53,9 +54,19 @@ export default function Index(props) {
         list = data.slice(skip - limit, skip);
     }
 
+
+    // 페이지 번호
+    let pageCnt = 10;   // 구간별 페이지 갯수
+    let pages = [];     // 구간별 페이지 번호
+    let n = (data.length / limit) < 10 ? 10 : Math.ceil(data.length / limit);
+    for(let i = 1; i < n + 1; i++) {
+        pages.push(i)
+    }
+
     let pageRight = () => {
-        if(skip< data.length) {
-            setSkip(skip += limit)
+        if(limit * page < data.length) {
+            page++;
+            setSkip(limit * page)
         }
     }
 
@@ -67,6 +78,12 @@ export default function Index(props) {
         }
     }
 
+    const changePage = (e) => {
+        let num = e.target.value
+        page = num;
+        setSkip(limit * page)
+        console.log(num)
+    }
 
     return(
         <>
@@ -104,14 +121,21 @@ export default function Index(props) {
                 {(list.length % 2 == 1 && skip >= data.length) &&
                     <div className="emptyCard"></div>
                 }
-                <div>
-                    <button onClick={pageLeft} className="btn btn-secondary">
+                
+            </div>
+
+            <div className="btnContainer">
+                    <button onClick={pageLeft} className="btn  btn-warning">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-left-fill" viewBox="0 0 16 16"><path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/></svg>    
                     </button>
-                    <button onClick={pageRight} className="btn btn-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
-                    </button>
+                <div class="btn-group me-2" role="group" aria-label="First group">
+                    {pages.map((num) => (
+                        <button key={num} value={num} onClick={(e) => changePage(e)} type="button" className="btn light">{num}</button>
+                        ))}
                 </div>
+                <button onClick={pageRight} className="btn  btn-warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
+                </button>
             </div>
         </>
     )
