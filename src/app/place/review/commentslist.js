@@ -1,13 +1,13 @@
-export default function CommentsList () {
+export default function CommentsList() {
     return (
         <div class="commentsList">
-            <img class="profileImg" alt="Img" style={{"border":"1px solid black"}} />
+            <img id="commentProfile" src="/profile.png" alt="Img" style={{"border":"1px solid black"}} />
             <span class="nickname">nickname</span>
             <span>&ensp;|&ensp;</span>
             <span class="date">date</span>
-            <span><img class="recommendIcon" alt="Icon" /></span>
+            <span><i class="icon fa-regular fa-thumbs-up"></i></span>
             <span class="recommendCnt">Cnt</span>
-            <p class="comment">comment</p>
+            <p class="comment">댓글입니다.</p>
         </div>
     )
 }
