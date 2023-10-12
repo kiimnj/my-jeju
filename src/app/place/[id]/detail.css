@@ -1,3 +1,96 @@
 #detailContainer {
-    border: 1px solid black;
+    width: 100%;
+}
+
+#detailImg {
+    object-fit: cover;    
+}
+#detailContents{
+    padding: 0 20px;
+}
+
+/* */
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.title p {
+    margin: 0;
+}
+.info p:first-of-type {
+    padding: 0;    
+}
+.info h5 {
+    font-weight: 700;
+}
+#likevisit {
+    display: flex;
+    font-size: 15px;
+    font-weight: 100;
+    gap: 10px;
+}
+#likevisit svg {
+    width: 40px;
+    height: 25px;
+}
+#likevisit svg:first-child {
+    padding-right: 10px;
+    border-right: 1px solid #000
+}
+
+/* 상세 메뉴 바*/
+input[type='radio'] {
+    display: none;
+}
+input[type='radio']:checked+label {
+    border-bottom: 3px solid orange
+}
+#detailContents .nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* 리뷰 평균 별점 */
+#average {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+#average > div {
+    text-align: center;
+}
+.progress {
+    width: 150px;
+    height: 7px !important;
+}
+.progress-bar {
+    height: 5px !important;
+}
+.graph {
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+}
+.graph p {
+    margin: 0;
+    padding: 0 5px;
+}
+
+/* 리뷰 정렬 셀렉트 */
+.dropdown {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.dropdown-toggle {
+    padding: 0;
+    background-color: white !important;
+    border: none;
+}
+
+/* 리뷰 */
+#comment {
+    border-bottom: 1px solid #ddd;
 }
