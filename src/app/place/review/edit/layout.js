@@ -3,7 +3,7 @@ import './edit.css'
 
 export default function EditLayout({ children }) {
     return (
-      <div id="placeContainer">
+      <div id="editContainer">
           {children}
       </div>
     )
