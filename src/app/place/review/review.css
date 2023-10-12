@@ -13,14 +13,39 @@
     background-color: #d9d9d9;
     border-radius: 10px;
 }
-/* #title {
+#title {
 }
-#score {
+#star {
 }
 #visited {
 }
 #liked {
-} */
+}
+
+/* 리뷰 */
+#reviewInfo {
+
+}
+#reviewEdit {
+
+}
+
+/* 이미지 카드 */
+.images {
+    width: 120px;
+    height: 120px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#imageSlide {
+    position: relative;
+    height: 137px;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 23px;
+}
 
 /* 댓글 */
 #commentProfile {
@@ -29,18 +54,25 @@
 }
 
 /* 댓글 입력 폼 */
-#commentform {
+#commentWrap {
     width: 100%;
     height: 40px;
+    text-align: center;
 }
 #commentInput {
-    width: calc(100% - 50px);
+    width: 300px;
+    height: 100%;
+    padding-left: 20px;
+    font-size: 15px;
     border: 1px solid #F2A96C;
     border-radius: 20px;
 }
 #commentButton {
     width: 53px;
+    height: 100%;
+    font-size: 15px;
     color: #fff;
     background-color: #F2A96C;
     border-radius: 20px;
+    border: 1px solid #F2A96C;
 }
