@@ -1,64 +1,78 @@
+"use client"
 import { getData } from '../../util'
-import { useEffect } from 'react'
-import Header from './header';
+import { useEffect, useState } from 'react'
+import Link from "next/link";
+import Header from '../header';
 import PlaceTab from './placetab';
-import ImgCard from './imgcards';
-import Comments from './comments';
-import InputComment from './inputcomment'
+import ImgCards from './imgcards';
+import CommentsList from './commentslist';
+import CommentForm from './commentform'
 
+let page = 1;
+const api = process.env.NEXT_PUBLIC_API_KEY
+const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&page=${page}`
+const location = "home"
 
-export default function review({}) {
+export default function review() {
     const [data, setData] = useState([]);
-    // const [skip, setSkip] = useState(20);
-    // let cnt = 20;
-    // let limit = 20;    
+
     useEffect(() => {
         getData(url)
         .then(data => {
             let newData = data.items;
             setData(newData)
         }).catch(error => console.log(error))
-    })
+    }, [])
     let items = data;
     
 
     return (
       <div>
-        {/* <Header location={location}/> */}
+        <Header location={location}/>
         <div className='placeInfo'>
-            {items.map(item => (
+            {/* {items.map(item => (
                 <div key={item.contentsid}>
                     <Link href={`/place/${item.contentsid}`}>
                     <PlaceTab 
                         id={item.contentsid}
                         title={item.title}
-                        thumb={item.repPhoto.photoid.thumbnailpath}
+                        photo={item.repPhoto.photoid.imgpath}
                     />
                     </Link>
                 </div>
-            ))}
+            ))} */}
+            <div>
+                {/* <Link href=''> */}
+                <PlaceTab />
+                {/* </Link> */}
+            </div>
         </div>
-        <div id='reviewDetail'>
-            <p class="score">★★★☆☆ 3.5</p>
+        <div id='reviewConatainer'>
+            <h2 class="score">★★★☆☆ 3.5</h2>
             <p class="recommendIcon"></p>
             <p class="recommendCnts"></p>
             <div>
-                <p class='nickname'>닉네임</p>
-                <p>|</p>
-                <p class='reviewDate'>2023.03.03</p>
+                <span class='nickname'>닉네임</span>
+                <span>&ensp;|&ensp;</span>
+                <span class='reviewDate'>2023.03.03</span>
             </div>
             <p>
-                <a href={`/place/${item.contentsid}/review/${review.reviewid}/edit`}>수정</a>
-                <p>|</p>
-                <p>삭제</p>
+            {/* {items.map(item => (
+                <Link href={`/place/${item.contentsid}/review/${review.reviewid}/edit`}>수정</Link>
+            ))} */}
+            <div>리뷰 내용입니다.</div>
+                <p>수정  |  삭제</p>
+    
+            {/* <p>&ensp;|&ensp;</p>
+                <p>삭제</p> */}
             </p>
             <p class="commentIcon"></p>
             <p class="commentCnts"></p>
             <p class=''></p>
         </div>
-        <ImgCard />
-        <Comments />
-        <InputComment value={contents} />
+        <ImgCards />
+        <CommentsList />
+        <CommentForm />
       </div>
     )
   }

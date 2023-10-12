@@ -1,12 +1,16 @@
-import React from 'react'
+import ReveiwButton from './reveiwbutton'
+import ReviewText from './reviewtext'
+import AddImg from './addimg'
 
-export default function page() {
+export default function ReviewForm() {
   return (
-    <div>
-        <form>
-                <InputScore />
-                <InputReview />
-                <ReveiwButton />
+    <div id="reviewForm">
+        <form >
+          <div className="wrap">
+            <ReviewText />
+            <AddImg />
+            <ReveiwButton />
+          </div>
         </form>
     </div>
   )

@@ -1,7 +1,7 @@
-import React from 'react'
-
 export default function Inputimg() {
   return (
-    <div>Inputimg</div>
+    <form>
+      <input type='image' alt='inputImg' width="120" height="120"></input>
+    </form>
   )
 }

@@ -1,9 +1,10 @@
-import React from 'react'
+import '../../place.css';
+import './edit.css'
 
-export default function layout() {
-  return (
-    <div>
-        <Header />
-    </div>
-  )
-}
+export default function EditLayout({ children }) {
+    return (
+      <div id="editContainer">
+          {children}
+      </div>
+    )
+  }

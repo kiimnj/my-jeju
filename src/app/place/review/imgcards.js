@@ -1,12 +1,7 @@
-export default function ImgCard ({id, title, photo, thumb, tag, script}) {
-    let newTag = tag.split(",").slice(0, 3)
-
+export default function ImgCards ({id, title, photo, thumb, tag, script}) {
     return (
-        <div class="imgCards" style={{"width": "170px", "height": "270px", "flexShrink":"0"}}>
-            <img src={photo} class="imgCards-img-top" alt="..."/>
-            <div class="imgCards-body">
-                <p class="imgCard"><img src=""></img></p>
-            </div>
+        <div style={{"width": "120px", "height": "120px", "flexShrink":"0", "border":"1px solid black"}}>
+            <img src={photo} alt="img"/>
         </div>
     )
 }

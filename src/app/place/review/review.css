@@ -1,0 +1,46 @@
+.icon {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* place tab */
+.items {
+    display: inline-block;
+    height: 60px;
+}
+#thumb {
+    width: 60px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+}
+/* #title {
+}
+#score {
+}
+#visited {
+}
+#liked {
+} */
+
+/* 댓글 */
+#commentProfile {
+    width: 38px;
+    border-radius: 100%;
+}
+
+/* 댓글 입력 폼 */
+#commentform {
+    width: 100%;
+    height: 40px;
+}
+#commentInput {
+    width: calc(100% - 50px);
+    border: 1px solid #F2A96C;
+    border-radius: 20px;
+}
+#commentButton {
+    width: 53px;
+    color: #fff;
+    background-color: #F2A96C;
+    border-radius: 20px;
+}
