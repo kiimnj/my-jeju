@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import Link from "next/link";
 import Header from '../header';
 import PlaceTab from './placetab';
-import ImgCards from './imgcards';
+import Review from './review'
 import CommentsList from './commentslist';
-import CommentForm from './commentform'
+import AddComment from './addcomment'
 
 let page = 1;
 const api = process.env.NEXT_PUBLIC_API_KEY
@@ -47,32 +47,9 @@ export default function review() {
                 {/* </Link> */}
             </div>
         </div>
-        <div id='reviewConatainer'>
-            <h2 class="score">★★★☆☆ 3.5</h2>
-            <p class="recommendIcon"></p>
-            <p class="recommendCnts"></p>
-            <div>
-                <span class='nickname'>닉네임</span>
-                <span>&ensp;|&ensp;</span>
-                <span class='reviewDate'>2023.03.03</span>
-            </div>
-            <p>
-            {/* {items.map(item => (
-                <Link href={`/place/${item.contentsid}/review/${review.reviewid}/edit`}>수정</Link>
-            ))} */}
-            <div>리뷰 내용입니다.</div>
-                <p>수정  |  삭제</p>
-    
-            {/* <p>&ensp;|&ensp;</p>
-                <p>삭제</p> */}
-            </p>
-            <p class="commentIcon"></p>
-            <p class="commentCnts"></p>
-            <p class=''></p>
-        </div>
-        <ImgCards />
+        <Review />
         <CommentsList />
-        <CommentForm />
+        <AddComment />
       </div>
     )
   }
