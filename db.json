@@ -1,0 +1,57 @@
+{
+  "comment": [
+    {
+      "id": 1,
+      "userId": "userId1",
+      "star": "1",
+      "comment": "리뷰입니다!!!!!!!!11",
+      "dateTime": "2024.02.13"
+    },
+    {
+      "id": 2,
+      "userId": "userId2",
+      "star": "4",
+      "comment": "리뷰입니다!!!!!!!!22",
+      "dateTime": "2023.11.26"
+    },
+    {
+      "id": 3,
+      "userId": "userId3",
+      "star": "3",
+      "comment": "리뷰입니다!!!!!!!!33",
+      "dateTime": "2023.02.22"
+    },
+    {
+      "id": 4,
+      "userId": "userId4",
+      "star": "3",
+      "comment": "리뷰입니다!!!!!!!!33",
+      "dateTime": "2023.02.22"
+    },
+    {
+      "id": 5,
+      "userId": "userId5",
+      "star": "3",
+      "comment": "리뷰입니다!!!!!!!!33",
+      "dateTime": "2023.02.22"
+    }
+  ],
+  "likevisit": [
+    {
+      "id": 1,
+      "userid": "user02",
+      "postid": "CNTS_300000000015712",
+      "liked": false,
+      "visited": true,
+      "dateTime": "2023.09.13"
+    },
+    {
+      "userid": "user03",
+      "postid": "CNTS_300000000015712",
+      "liked": true,
+      "visited": false,
+      "dateTime": "2023.09.13",
+      "id": 2
+    }
+  ]
+}

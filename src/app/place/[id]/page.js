@@ -70,7 +70,7 @@ export default async function Detail(props) {
                         <h5>{data.title}</h5>
                         <p className="score">{avgStar(sum, comment.length)} / {comment.length}개 리뷰</p>
                     </div>
-                    <LikeVisit />
+                    <LikeVisit param={param}/>
                 </div>
                 
                 <DetailNav data={data} comment={comment} sum={sum} />

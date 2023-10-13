@@ -89,7 +89,7 @@ export default function Index() {
         <>
             <Header location={location}/>  
 
-            <div id="banner">
+            <div>
                 <img id="banner" src="/banner.jpg"/>
             </div>
 

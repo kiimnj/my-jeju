@@ -1,20 +1,62 @@
 "use client"
 
-import { useState } from "react";
+import { getData, putLikeVisit, addLikeVisit } from "@/app/util";
+import { useState, useEffect } from "react";
 
 
-export default function LikeVisit() {
+export default function LikeVisit({param}) {
+    const [lvData, setLvData] = useState();
     const [liked, setLiked] = useState(false);
     const [visited, setVisited] = useState(false);
 
+    const url = "http://localhost:3001/likevisit";
+
+
+    useEffect(() => {
+        getData(`${url}?postid=${param}&userid=user03`)   // + userid
+        .then((data) => {
+            if(data) {
+                setLvData(data[0])
+                setLiked(data[0].liked)
+                setVisited(data[0].visited)
+            } else {
+                setLvData(null)
+            }
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    }, [liked, visited])
+
     const likedClick = () => {
+
+            let newData;
+        
+        if(lvData) {
+            const putUrl = `${url}/${lvData.id}`;
+            newData = putLikeVisit(putUrl, lvData.id, "user03", !liked, visited, param)
+        } else {
+            newData = addLikeVisit(url, "user03", !liked, visited, param)           
+        }
         setLiked(!liked)
+        setLvData(newData)
     }
+
     const visitedClick = () => {
+        
+        let newData;
+        
+        if(lvData) {
+            const putUrl = `${url}/${lvData.id}`;
+            newData = putLikeVisit(putUrl, lvData.id, "user03", liked, !visited, param)
+        } else {
+            newData = addLikeVisit(url, "user03", liked, !visited, param)           
+        }
         setVisited(!visited)
+        setLvData(newData)
     }
 
-
+    console.log(liked, visited)
     return (
         <>
             <div id="likevisit">
