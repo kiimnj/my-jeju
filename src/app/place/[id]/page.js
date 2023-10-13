@@ -1,6 +1,5 @@
 import { getData } from "@/app/util"
 import LikeVisit from "./likeVisit"
-import Review from "./review"
 import DetailNav from "./detailNav"
 
 // 댓글 정보 받아오기
@@ -43,7 +42,7 @@ export default async function Detail(props) {
      * @param {*} length : 평균을 구할 데이터의 갯수
      * @returns 
      */
-    const avgStar = (sum, length) => {
+    const avgStar = function(sum, length) {
         let avg = parseInt(sum / length);
         let bel = 5 - avg
     
@@ -93,7 +92,7 @@ export default async function Detail(props) {
                 </ul>
 
                 <Review /> */}
-                <DetailNav data={data} comment={comment} avgStar={avgStar} sum={sum} />
+                <DetailNav data={data} comment={comment} sum={sum} />
             </div>
         </>
     )

@@ -1,8 +1,31 @@
 import Link from "next/link";
 import BarGraph from "./barGraph";
 
-export default function Review({placeId, comment, avgStar, sum}) {
+export default function Review({placeId, comment, sum}) {
     console.log(comment)
+
+    /**
+     * 평균 별점 표시
+     * @param {*} sum : 평균을 구할 별점들의 합계
+     * @param {*} length : 평균을 구할 데이터의 갯수
+     * @returns 
+     */
+    const avgStar = function(sum, length) {
+        let avg = parseInt(sum / length);
+        let bel = 5 - avg
+    
+        return (
+            <>
+                {Array(avg).fill().map(() => (
+                    <span>★</span>
+                ))
+                }{
+                Array(bel).fill().map(() => (
+                    <span>☆</span>
+                ))}
+            </>
+        )
+    }
 
     
     /**
@@ -27,7 +50,7 @@ export default function Review({placeId, comment, avgStar, sum}) {
     }
 
     return (
-        <div style={{"padding":"20px 0"}}>
+        <>
             <div id="average">
                 <div>
                     <h5>후기 {comment.length}</h5>
@@ -60,6 +83,6 @@ export default function Review({placeId, comment, avgStar, sum}) {
                     </p>
                 </div>
             ))}
-        </div>
+        </>
     )
 }
