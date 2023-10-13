@@ -18,8 +18,10 @@ export default function Card ({id, title, photo, thumb, tag, script}) {
             <img src={photo} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <p className="title">{title}</p>
-                <p className="star">★★★☆☆ 3.5</p>
-                <p className="hashtag">{hashTag}</p>
+                <div className="under">
+                    <p className="star">★★★☆☆ 3.5</p>
+                    <p className="hashtag">{hashTag}</p>
+                </div>
             </div>
         </div>
     )

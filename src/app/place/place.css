@@ -58,16 +58,20 @@
 }
 .star {
     font-size: 9px;
+    margin: 0;
     
 }
 .title {
     font-weight: 700;
     font-size: 13px;
     margin: 0;
+    padding-top: 0;
 }
 .hashtag {
     font-size: 11px;
     margin-bottom: 0;
+}
+.under{
     position: absolute;
     bottom: 5px;
 }

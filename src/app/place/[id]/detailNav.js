@@ -7,15 +7,17 @@ import Contact from "./contact";
 
 export default function DetailNav ({data, comment, avgStar, sum}) {
     let [on, setOn] = useState("d-explain");
-    let placeId = data.contentsid
-    let intro = data.introduction
-    let newTag = data.tag.split(",").slice(0, 3)
-    let hashTag = newTag.map(tag => "#" + tag.trim() + " ");
-    let address = data.address
-    let roadaddress = data.roadaddress
-    let lat = data.latitude;
-    let lng = data.longitude;
-
+    let title = data.title;
+    let placeId = data.contentsid;
+    let intro = data.introduction;
+    let newTag = data.tag.split(",").slice(0, 3);
+    let hashTag = newTag.map(tag => "#" + tag.trim() + " ");;
+    let address = data.address;
+    let roadaddress = data.roadaddress;
+    let phone = data.phoneno;
+    let position = [{title: data.title, lat: data.latitude, lng: data.longitude}];
+    let center = {lat: data.latitude, lng: data.longitude};
+    let level = 3;
 
     return (
         <>
@@ -40,8 +42,8 @@ export default function DetailNav ({data, comment, avgStar, sum}) {
 
             <div style={{"padding":"20px 0"}}>
                 {on == "d-explain" && <Explain intro={intro} hashTag={hashTag}/>}
-                {on == "d-contact" && <Contact address={address} roadaddress={roadaddress}/>}
-                {on == "d-map" && <Map lat={lat} lng={lng}/>}
+                {on == "d-contact" && <Contact address={address} roadaddress={roadaddress} phone={phone}/>}
+                {on == "d-map" && <Map positions={position} center={center} level={level}/>}
                 {on == "d-review" && <Review placeId={placeId} comment={comment} avgStar={avgStar} sum={sum}/>}
             </div>
         </>

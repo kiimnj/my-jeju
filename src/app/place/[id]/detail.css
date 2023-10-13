@@ -72,6 +72,25 @@ input[type='radio']:checked+label {
     text-decoration: underline;
 }
 
+/* 연락처 */
+dl {height: 50px;}
+dt {
+    width: 50px;
+    display: inline-block;
+}
+dd {
+    width: 250px;
+    float: right;
+}
+dd span {cursor: pointer;}
+.address-modal {
+    position: absolute;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    padding: 5px;
+}
 
 /* 리뷰 평균 별점 */
 #average {
