@@ -1,19 +1,19 @@
 "use client"
 import { getData } from "../util";
-import Header from './header';
 import Link from "next/link";
 import Card from './card';
 import { useEffect, useState } from "react";
+import Header from './header';
+
 
 
 let page = 1;
 export default function Index() {
-    const location = "home"
     const [data, setData] = useState([]);
     let [skip, setSkip] = useState(20);
     // let[isLoaded, setIsLoaded] = useState()
     const limit = 20;   // 고정단위
-
+  const location = "home"
     
     
     /** 비짓제주 api 전체 페이지 가져오기 */
@@ -87,17 +87,18 @@ export default function Index() {
 
     return(
         <>
-            <Header location={location}/>
+            <Header location={location}/>  
+
             <div id="banner">
                 <img id="banner" src="/banner.jpg"/>
             </div>
 
             <ul id="quick" className="nav">
-                <li><div className="qmenu"></div> <p>공지사항</p></li>
-                <li><div className="qmenu"></div> <p>커뮤니티</p></li>
-                <li><div className="qmenu"></div> <p>나의지도</p></li>
-                <li><div className="qmenu"></div> <p>고객센터</p></li>
-                <li><div className="qmenu"></div> <p>공지사항</p></li>
+                <li><div className="qmenu" ></div> <p className="small-font">공지사항</p></li>
+                <li><div className="qmenu"></div> <p className="small-font">커뮤니티</p></li>
+                <li><div className="qmenu"></div> <p className="small-font">나의지도</p></li>
+                <li><div className="qmenu"></div> <p className="small-font">고객센터</p></li>
+                <li><div className="qmenu"></div> <p className="small-font">공지사항</p></li>
             </ul>
 
             <hr/>

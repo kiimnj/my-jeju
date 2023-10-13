@@ -1,3 +1,4 @@
+*{box-sizing: border-box;}
 ul, ol, dl {
     list-style: none; 
     margin: 0; 
@@ -10,4 +11,11 @@ hr {
 }
 a {
     text-decoration: none !important;
+}
+#container {
+    width: 393px;
+    margin: 0 auto;
+}
+.spin180 {
+    transform: rotate(180deg);
 }
