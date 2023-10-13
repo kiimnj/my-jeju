@@ -52,6 +52,26 @@ input[type='radio']:checked+label {
     border-bottom: 1px solid #ddd;
 }
 
+/* 관광 정보 */
+.big-font {
+    font-size: 20px;
+}
+#intro {
+    text-align: center;
+}
+#explain {
+    background-color: #f5f5f5;
+    box-shadow: 0 0 10px 5px white inset;
+    padding: 0 10px;
+}
+.quote-right {
+    text-align: end;
+}
+.tag {
+    color: #F2A96C;
+    text-decoration: underline;
+}
+
 
 /* 리뷰 평균 별점 */
 #average {

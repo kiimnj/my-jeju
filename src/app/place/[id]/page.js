@@ -29,6 +29,7 @@ export default async function Detail(props) {
     const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&cid=${param}`
     const resp = await getData(url)
     const data = resp.items[0]
+    console.log(data)
 
     // 별점 총 합계
     let sum = 0;

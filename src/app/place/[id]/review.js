@@ -2,12 +2,11 @@ import Link from "next/link";
 import BarGraph from "./barGraph";
 
 export default function Review({placeId, comment, sum}) {
-    console.log(comment)
 
     /**
      * 평균 별점 표시
-     * @param {*} sum : 평균을 구할 별점들의 합계
-     * @param {*} length : 평균을 구할 데이터의 갯수
+     * @param {Number} sum : 평균을 구할 별점들의 합계
+     * @param {Number} length : 평균을 구할 데이터의 갯수
      * @returns 
      */
     const avgStar = function(sum, length) {
@@ -30,7 +29,7 @@ export default function Review({placeId, comment, sum}) {
     
     /**
      * 별점 표시
-     * @param {*} num : 별점
+     * @param num : 별점
      * @returns 
      */
     const star = (num) => {
