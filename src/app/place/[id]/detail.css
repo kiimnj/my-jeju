@@ -29,6 +29,7 @@
     font-size: 15px;
     font-weight: 100;
     gap: 10px;
+    color: #F2A96C;
 }
 #likevisit svg {
     width: 40px;
@@ -36,7 +37,7 @@
 }
 #likevisit svg:first-child {
     padding-right: 10px;
-    border-right: 1px solid #000
+    border-right: 1px solid #ddd
 }
 
 /* 상세 메뉴 바*/

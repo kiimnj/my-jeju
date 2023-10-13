@@ -4,57 +4,40 @@ import BarGraph from "./barGraph";
 export default function Review({placeId, comment, sum}) {
 
     /**
-     * 평균 별점 표시
-     * @param {Number} sum : 평균을 구할 별점들의 합계
-     * @param {Number} length : 평균을 구할 데이터의 갯수
-     * @returns 
-     */
-    const avgStar = function(sum, length) {
-        let avg = parseInt(sum / length);
-        let bel = 5 - avg
-    
-        return (
-            <>
-                {Array(avg).fill().map(() => (
-                    <span>★</span>
-                ))
-                }{
-                Array(bel).fill().map(() => (
-                    <span>☆</span>
-                ))}
-            </>
-        )
-    }
-
-    
-    /**
      * 별점 표시
      * @param num : 별점
      * @returns 
      */
-    const star = (num) => {
-        let fill = parseInt(num);
-        let bel = 5 - fill
-        return (
-            <>
-                {Array(fill).fill().map(() => (
-                    <span>★</span>
-                ))
-                }{
-                Array(bel).fill().map(() => (
-                    <span>☆</span>
-                ))}
-            </>
-        )
-    }
+    const renderStars = (num) => {
+        const maxRating = 5; // 최대 점수
+        const stars = [];
+    
+        for (let i = 1; i <= maxRating; i++) {
+          stars.push(
+            <span
+              key={i}
+              style={{
+                color: i <= num ? '#F2A96C' : '#d9d9d9',
+                fontSize: '11px'
+              }}
+            >
+              <i class="fa-solid fa-star"></i>
+            </span>
+          );
+        }
+    
+        return stars;
+    };
+
+    let avg = parseInt(sum / comment.length);
 
     return (
         <>
             <div id="average">
                 <div>
                     <h5>후기 {comment.length}</h5>
-                    <h3>3.5</h3>
-                    {avgStar(sum, comment.length)}
+                    <h3>{avg}</h3>
+                    {renderStars(avg)}
                 </div>
 
                 <div id="barGraph">
@@ -74,7 +57,7 @@ export default function Review({placeId, comment, sum}) {
 
             {comment.map((item) => (
                 <div id="comment">
-                    <p className="small-font">{star(item.star)}</p>
+                    <p className="small-font">{renderStars(item.star)}</p>
                     <p>{item.userId} | {item.dateTime}</p>
                     <p>
                         {item.comment} 

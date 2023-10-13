@@ -11,7 +11,6 @@ let page = 1;
 export default function Index() {
     const [data, setData] = useState([]);
     let [skip, setSkip] = useState(20);
-    // let[isLoaded, setIsLoaded] = useState()
     const limit = 20;   // 고정단위
   const location = "home"
     

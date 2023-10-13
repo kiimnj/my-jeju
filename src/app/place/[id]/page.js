@@ -37,28 +37,28 @@ export default async function Detail(props) {
         sum += Number(c.star)
     }
     
-    /**
-     * 평균 별점 표시
-     * @param {*} sum : 평균을 구할 별점들의 합계
-     * @param {*} length : 평균을 구할 데이터의 갯수
-     * @returns 
-     */
-    const avgStar = function(sum, length) {
-        let avg = parseInt(sum / length);
-        let bel = 5 - avg
+    const renderStars = (num) => {
+        const maxRating = 5; // 최대 점수
+        const stars = [];
     
-        return (
-            <>
-                {Array(avg).fill().map(() => (
-                    <span>★</span>
-                ))
-                }{
-                Array(bel).fill().map(() => (
-                    <span>☆</span>
-                ))}
-            </>
-        )
-    }
+        for (let i = 1; i <= maxRating; i++) {
+          stars.push(
+            <span
+              key={i}
+              style={{
+                color: i <= num ? '#F2A96C' : '#d9d9d9',
+                fontSize: '11px'
+              }}
+            >
+              <i class="fa-solid fa-star"></i>
+            </span>
+          );
+        }
+    
+        return stars;
+    };
+
+    let avg = parseInt(sum / comment.length);
 
     return (
         <>
@@ -68,7 +68,7 @@ export default async function Detail(props) {
                     <div className="info">
                         <p className="small-font">{data.region2cd && data.region2cd.label}</p>
                         <h5>{data.title}</h5>
-                        <p className="score">{avgStar(sum, comment.length)} / {comment.length}개 리뷰</p>
+                        <p className="score">{renderStars(avg)} / {comment.length}개 리뷰</p>
                     </div>
                     <LikeVisit param={param}/>
                 </div>

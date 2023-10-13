@@ -46,12 +46,12 @@
       "dateTime": "2023.09.13"
     },
     {
+      "id": 2,
       "userid": "user03",
       "postid": "CNTS_300000000015712",
-      "liked": true,
-      "visited": false,
-      "dateTime": "2023.09.13",
-      "id": 2
+      "liked": false,
+      "visited": true,
+      "dateTime": "2023.09.13"
     }
   ]
 }
