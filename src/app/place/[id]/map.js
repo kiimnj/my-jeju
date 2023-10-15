@@ -123,8 +123,6 @@ export default function Map ({positions, center, level}) {
     }, [positions])
     
     return (
-        
-        <div id="map" style={{ width: "100%", height: "200px" }}></div>
-    
+      <div id="map" style={{ width: "100%", height: "200px" }}></div>
     )
 }

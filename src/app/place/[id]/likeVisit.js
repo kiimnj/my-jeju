@@ -30,7 +30,7 @@ export default function LikeVisit({param}) {
 
     const likedClick = () => {
 
-            let newData;
+        let newData;
         
         if(lvData) {
             const putUrl = `${url}/${lvData.id}`;
