@@ -33,30 +33,25 @@
       "liked": false,
       "visited": true,
       "dateTime": "2023.09.13"
-    },
+    }
+  ],
+  
+  "comment": [
     {
-      "id": 2,
-      "userid": "user03",
-      "postid": "CNTS_300000000015712",
-      "liked": false,
-      "visited": true,
+      "id": 1,
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "좋은 리뷰 감사합니다!!11",
       "dateTime": "2023.09.13"
-    },
+    }
+  ],
+
+  "reviewlike": [
     {
-      "id": 3,
-      "userid": "user03",
-      "postid": "CNTS_300000000015967",
-      "liked": false,
-      "visited": false,
-      "dateTime": "2023.09.16"
-    },
-    {
-      "id": 4,
-      "userid": "user03",
-      "postid": "CNTS_200000000010937",
-      "liked": true,
-      "visited": true,
-      "dateTime": "2023.09.16"
+      "id": 1,
+      "userid": "user02",
+      "reviewid": "1",
+      "dateTime": "2023.09.13"
     }
   ]
 }

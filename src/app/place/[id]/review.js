@@ -78,7 +78,7 @@ export default function Review({placeId, review, sum}) {
                     <p>{item.userId} | {item.dateTime}</p>
                     <p>
                         {item.comment} 
-                        <Link href={"/place/"+ placeId + "/review/" + item.id} className="small-font"> ...더보기</Link>
+                        <Link href={"/review/" + item.id} className="small-font"> ...더보기</Link>
                     </p>
                 </div>
             ))}

@@ -1,6 +1,7 @@
 import { getData } from "@/app/util"
 import LikeVisit from "./likeVisit"
 import DetailNav from "./detailNav"
+import Header from "../header"
 
 
 export default async function Detail(props) {
@@ -9,6 +10,7 @@ export default async function Detail(props) {
     const api = process.env.NEXT_PUBLIC_API_KEY
     const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&cid=${param}`
     const reviewUrl = 'http://localhost:3001/review'
+
 
     // 관광지 정보
     const resp = await getData(url)
@@ -49,7 +51,7 @@ export default async function Detail(props) {
 
     return (
         <>
-        
+            <Header location={location} />
             <img src={data.repPhoto.photoid.imgpath} id="detailImg" width={393} height={400}/>
             <div id="detailContents">
                 <div className="title">

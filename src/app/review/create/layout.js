@@ -1,5 +1,4 @@
-import Header from '../../header';
-import '../../place.css';
+import Header from '@/app/place/header';
 import './edit.css'
 
 export default function EditLayout({ children }) {
