@@ -1,0 +1,12 @@
+#withdrawLayout {
+    width: 393px;
+    margin: 0 auto;
+}
+
+.accountLogoWrap {
+    text-align: center;
+}
+.accountLogo {
+    padding: 50px 0;
+    width: 110px;
+}
