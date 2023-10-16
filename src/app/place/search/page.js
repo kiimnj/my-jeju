@@ -102,6 +102,7 @@ export default function Search() {
 
     return (
         <>
+            <Header />
             <div id="search">
                 <div id="search-header">
                     <input id="searchBar" ref={inputEL} type="text" style={inputStyle} onChange={handleChange} placeholder="장소명을 검색하세요."/>

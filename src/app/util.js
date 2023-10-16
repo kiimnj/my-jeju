@@ -104,6 +104,39 @@ export async function addComment(url, userid, reviewid, comment) {
     return res.json();
 }
 
+// 리뷰에 좋아요 추가
+export async function like(url, userid, reviewid) {
+    const res = await fetch (url, {
+        method: 'POST',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify({
+            userid: userid,
+            reviewid: reviewid,
+            dateTime: now
+        })
+    })
+
+    if(!res.ok) {
+        throw new Error(`${res.status} ${res.statusText}`)
+    }
+
+    return res.json();
+} 
+
+// 리뷰에 좋아요 취소
+export async function unLike(url) {
+    const res = await fetch (url, {
+        method: 'DELETE',
+        headers: {'Content-Type' : 'application/json'},
+    })
+
+    if(!res.ok) {
+        throw new Error(`${res.status} ${res.statusText}`)
+    }
+
+    return res.json();
+} 
+
 // export async function addFormData(url, formData) {
 //     const res = await fetch (url, {
 //         method: 'POST',

@@ -33,6 +33,14 @@
       "liked": false,
       "visited": true,
       "dateTime": "2023.09.13"
+    },
+    {
+      "userid": "user03",
+      "postid": "CNTS_300000000015724",
+      "liked": false,
+      "visited": true,
+      "dateTime": "2023.09.17",
+      "id": 2
     }
   ],
   "comment": [
@@ -108,31 +116,10 @@
     },
     {
       "userid": "user02",
-      "reviewid": "1",
-      "comment": "늘어나기만 해",
-      "dateTime": "2023.09.16",
+      "reviewid": "3",
+      "comment": "댓글댓글",
+      "dateTime": "2023.09.17",
       "id": 14
-    },
-    {
-      "userid": "user02",
-      "reviewid": "1",
-      "comment": "얍",
-      "dateTime": "2023.09.17",
-      "id": 18
-    },
-    {
-      "userid": "user02",
-      "reviewid": "3",
-      "comment": "호잇",
-      "dateTime": "2023.09.17",
-      "id": 19
-    },
-    {
-      "userid": "user02",
-      "reviewid": "3",
-      "comment": "이렇게?",
-      "dateTime": "2023.09.17",
-      "id": 20
     }
   ],
   "reviewlike": [
@@ -141,6 +128,30 @@
       "userid": "user02",
       "reviewid": "1",
       "dateTime": "2023.09.13"
+    },
+    {
+      "userid": "user01",
+      "reviewid": 3,
+      "dateTime": "2023.09.17",
+      "id": 2
+    },
+    {
+      "userid": "user01",
+      "reviewid": 3,
+      "dateTime": "2023.09.17",
+      "id": 3
+    },
+    {
+      "userid": "user01",
+      "reviewid": 3,
+      "dateTime": "2023.09.17",
+      "id": 4
+    },
+    {
+      "userid": "user01",
+      "reviewid": 3,
+      "dateTime": "2023.09.17",
+      "id": 5
     }
   ]
 }

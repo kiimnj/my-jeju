@@ -87,26 +87,11 @@ export default async function Review(props) {
   const comment = await getData(commentUrl);
   const cntComment = comment.length;
 
-  //리뷰 좋아요 불러오기
-  const reviewlike = `http://localhost:3001/reviewlike?reviewid=${param}`
-  const like = await getData(reviewlike)
-  const cntLike = like.length
-
-  console.log(review)
-  console.log(comment)
-  console.log(like.length)
-
-
-  // if(!isLoaded) {
-  //   return <Spinner/>
-  // }
- 
-  console.log(review)
   return (
     <div>
       <Header />
       <PlaceTab id={review.contentsid} />
-      <ReviewContainer review={review} cntLike={cntLike} cntComment={cntComment}/>
+      <ReviewContainer review={review} cntComment={cntComment}/>
 
       <div className='hr'>
         <div>

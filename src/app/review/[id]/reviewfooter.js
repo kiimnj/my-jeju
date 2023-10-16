@@ -1,5 +1,7 @@
 
-export default function ReviewFooter({cntComment, cntLike}) {
+export default function ReviewFooter({cntComment, cntLike, handleLike}) {
+    
+
     return (
             <div class="reveiwFooter">
                 <div>
@@ -8,7 +10,7 @@ export default function ReviewFooter({cntComment, cntLike}) {
                     <span className="commentCnts">{cntComment}</span>
                 </div>
 
-                <div className="reviewRecommendWrap">
+                <div className="reviewRecommendWrap" onClick={handleLike}>
                     <span className="reviewRecommendIcon"><i class="fa-regular fa-thumbs-up"></i></span>
                     <span className="reviewRecommendCnt">{cntLike}</span>
                 </div>
