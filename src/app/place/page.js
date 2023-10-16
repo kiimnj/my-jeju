@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import Header from './header';
 
 
-
 let page = 1;
 export default function Index() {
     const [data, setData] = useState([]);
@@ -14,7 +13,7 @@ export default function Index() {
 
 
     const limit = 20;   // 고정단위
-  const location = "home"
+    const location = "home"
     
     
     /** 비짓제주 api 전체 페이지 가져오기 */

@@ -2,7 +2,7 @@
   "review": [
     {
       "id": 1,
-      "userId": "userId1",
+      "userid": "userId1",
       "star": "1",
       "comment": "리뷰입니다!!!!!!!!11",
       "contentsid": "CNTS_300000000015712",
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "userId": "userId2",
+      "userid": "userId2",
       "star": "4",
       "comment": "리뷰입니다!!!!!!!!22",
       "contentsid": "CNTS_300000000015712",
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "userId": "userId3",
+      "userid": "userId3",
       "star": "3",
       "comment": "리뷰입니다!!!!!!!!33",
       "contentsid": "CNTS_300000000015712",
@@ -35,7 +35,6 @@
       "dateTime": "2023.09.13"
     }
   ],
-  
   "comment": [
     {
       "id": 1,
@@ -43,9 +42,99 @@
       "reviewid": "1",
       "comment": "좋은 리뷰 감사합니다!!11",
       "dateTime": "2023.09.13"
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "조용!",
+      "dateTime": "2023.09.16",
+      "id": 5
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "hi!",
+      "dateTime": "2023.09.16",
+      "id": 6
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "aa",
+      "dateTime": "2023.09.16",
+      "id": 7
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "ㅁ",
+      "dateTime": "2023.09.16",
+      "id": 8
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "왱,,",
+      "dateTime": "2023.09.16",
+      "id": 9
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "왱,,",
+      "dateTime": "2023.09.16",
+      "id": 10
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "왱,,",
+      "dateTime": "2023.09.16",
+      "id": 11
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "왱,,",
+      "dateTime": "2023.09.16",
+      "id": 12
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "아....",
+      "dateTime": "2023.09.16",
+      "id": 13
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "늘어나기만 해",
+      "dateTime": "2023.09.16",
+      "id": 14
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "얍",
+      "dateTime": "2023.09.17",
+      "id": 18
+    },
+    {
+      "userid": "user02",
+      "reviewid": "3",
+      "comment": "호잇",
+      "dateTime": "2023.09.17",
+      "id": 19
+    },
+    {
+      "userid": "user02",
+      "reviewid": "3",
+      "comment": "이렇게?",
+      "dateTime": "2023.09.17",
+      "id": 20
     }
   ],
-
   "reviewlike": [
     {
       "id": 1,

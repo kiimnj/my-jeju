@@ -19,9 +19,11 @@ function dateTimeFormmat(dateTime) {
     return `${year}.${month}.${date}`
 }
 
+// 현재시간!!!
 const now = dateTimeFormmat(new Date());
 
 
+// 데이터 불러오기
 export async function getData(url) {
     const res = await fetch (`${url}`);
         
@@ -56,7 +58,7 @@ export async function addLikeVisit(url, userid, liked, visited, postid) {
     return await res.json();
 }
 
-// 좋아요 or 방문이 처음일 때 데이터 변환
+// 좋아요 or 방문이 처음이 아닐 때 데이터 변환
 export async function putLikeVisit(url, id, userid, liked, visited, postid) {
     
     const res = await fetch (url, {
@@ -80,6 +82,26 @@ export async function putLikeVisit(url, id, userid, liked, visited, postid) {
     }
 
     return await res.json();
+}
+
+// 리뷰에 댓글
+export async function addComment(url, userid, reviewid, comment) {
+    const res = await fetch(url, {
+        method: 'POST',
+        headers: {"Content-Type" : "application/json"},
+        body: JSON.stringify({
+            userid: userid,
+            reviewid: reviewid,
+            comment: comment,
+            dateTime: now
+        })
+    })
+
+    if(!res.ok) {
+        throw new Error(`${res.status} ${res.statusText}`)
+    }
+
+    return res.json();
 }
 
 // export async function addFormData(url, formData) {

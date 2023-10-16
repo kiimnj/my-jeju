@@ -1,34 +1,38 @@
 import { getData } from "@/app/util";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-export default function PlaceTab ({place}) {
-    // let [on, setOn] = useState("d-info");
-    // let title = place.title;
-    // let placeId = place.contentsid;
-    // let photo = item.repPhoto.photoid.thumbnailpath;
-    // let newTag = place.tag.split(",");
-    // let hashTag = newTag.map(tag => "#" + tag.trim() + " ");;
-    // let address = place.address;
-    // let roadaddress = place.roadaddress;
-    // let phone = place.phoneno;
-    // let position = [{title: place.title, lat: place.latitude, lng: place.longitude}];
-    // let center = {lat: place.latitude, lng: place.longitude};
-    // let level = 5;
+export default async function PlaceTab ({id}) {
+    // const [place, setPlace] = useState();
+
+    const api = process.env.NEXT_PUBLIC_API_KEY
+    let placeUrl = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&cid=${id}`
+      
+    const resp = await getData(placeUrl)
+    const place = resp.items[0]
+    // useEffect(() => {
+    //     getData(placeUrl)
+    //     .then(data => setPlace(data.items[0]))
+        
+    // }, [])
+    
+    console.log(place)
+    let title = place.title;
+    let photo = place.repPhoto.photoid.thumbnailpath;
 
     return (
         <>
             <Link href='/place/:id'>
-                {/* <div id="placeTabWrap">
+                <div id="placeTabWrap">
                     <img  id="thumb" src={photo} style={{"width": "60px", "height": "60px"}} />
                     <div className="placeInfo">
-                        <div id="title">title</div>
+                        <div id="title">{title}</div>
                         <div id="score">★★★★★ 5.0</div>
                     </div>
                     <div className="chevronRight">
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
-                </div> */}
+                </div>
             </Link>
         </>
 
