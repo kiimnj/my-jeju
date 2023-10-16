@@ -1,0 +1,57 @@
+.accountLogoWrap {
+    text-align: center;
+}
+.accountLogo {
+    padding: 50px 0;
+    width: 110px;
+}
+
+.loginInput, .loginBtn, #kakaoLoginBtn {
+    font-size: 15px;
+    width: 236px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #F2A96C;
+    margin: 5px;
+}
+.loginInput {
+    padding: 15px;
+}
+.loginBtn {
+    color: #fff;
+    background-color: #F2A96C;
+    margin: 30px;
+}
+#kakaoLoginBtn {
+    font-size: 13px;
+    border-color: #F6E24B;
+    background-color: #F6E24B;
+}
+
+#accountManage {
+    color: rgba(0, 0, 0, 0.5);
+    /* font-weight: 100; */
+}
+.link {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 11px;
+}
+
+.hr-sect {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    margin: 30px 0px;
+}
+.hr-sect::before,
+.hr-sect::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.5);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 16px;
+}
