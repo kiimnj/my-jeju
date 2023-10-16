@@ -23,7 +23,7 @@ export default function BarGraph ({review}) {
                         <div className="progress" role="progressbar" aria-valuenow={item[1]} aria-valuemin="0" aria-valuemax="100">
                             <div className="progress-bar" style={{"width": `${item[1]}%`}}></div>
                         </div>
-                        <p>{item[1]}%</p>
+                        <p>{review.length > 0 ? item[1] : 0}%</p>
                     </div>
                 ))
             }

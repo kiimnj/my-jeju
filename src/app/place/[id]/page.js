@@ -17,7 +17,6 @@ export default async function Detail(props) {
 
     // 해당 관광지에 대한 리뷰
     const review = await getData(`${reviewUrl}?contentsid=${param}`)
-    
 
     // 별점 총 합계
     let sum = 0;

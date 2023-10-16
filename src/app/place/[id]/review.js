@@ -51,7 +51,7 @@ export default function Review({placeId, review, sum}) {
             <div id="average">
                 <div>
                     <h5>후기 {review.length}</h5>
-                    <h3>{avg}</h3>
+                    <h3>{review.length > 0 ? avg : 0}</h3>
                     {renderStars(avg)}
                 </div>
 
