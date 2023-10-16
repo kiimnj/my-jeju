@@ -4,30 +4,56 @@
 }
 
 /* place tab */
-.items {
-    display: inline-block;
-    height: 60px;
+#placeTabWrap {
+    position: relative;
 }
 #thumb {
     width: 60px;
     background-color: #d9d9d9;
     border-radius: 10px;
+    margin: 20px;
 }
-#title {
+.placeInfo {
+    position: absolute;
+    top: 25px;
+    display: inline-block;
 }
-#star {
+.chevronRight {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: inline;
 }
-#visited {
-}
-#liked {
+#starRating {
+    margin: 10px;
 }
 
 /* 리뷰 */
-#reviewInfo {
-
+/* 리뷰 헤더 */
+.reviewHeader {
+    margin: 0 20px;
+    position: relative;
+}
+#reviewProfile {
+    margin: 10px;
+    width: 38px;
+    border-radius: 100%;
+}
+#reviewInfo, #reviewEdit {
+    display: inline-block;
 }
 #reviewEdit {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+#reviewEdit a {
+    color: #000;
+}
 
+/* 리뷰 본문 */
+.reviewText {
+    padding: 30px;
 }
 
 /* 이미지 카드 */
@@ -44,13 +70,26 @@
     height: 137px;
     overflow-x: auto;
     white-space: nowrap;
-    margin: 23px;
+    margin:  23px;
+    margin-bottom: 80px;
 }
 
-/* 댓글 */
-#commentProfile {
-    width: 38px;
-    border-radius: 100%;
+/* 리뷰 푸터 */
+.reveiwFooter {
+    position: relative;
+    margin: 20px;
+}
+.commentCntWrap {
+    position: absolute;
+    display: inline-block;
+    left: 20px;
+    bottom: 25px;
+}
+.reviewRecommendWrap {
+    position: absolute;
+    display: inline-block;
+    right: 20px;
+    bottom: 25px;
 }
 
 /* 댓글 입력 폼 */
@@ -58,6 +97,7 @@
     width: 100%;
     height: 40px;
     text-align: center;
+    margin: 30px 0;
 }
 #commentInput {
     width: 300px;
@@ -75,4 +115,27 @@
     background-color: #F2A96C;
     border-radius: 20px;
     border: 1px solid #F2A96C;
+}
+
+/* 댓글 */
+.commentsList {
+    position: relative;
+    margin: 20px;
+}
+#commentProfile {
+    margin: 5px;
+    width: 28px;
+    border-radius: 100%;
+}
+
+.recommendWrap {
+    position: absolute;
+    right: 20px;
+    display: inline-block;
+}
+.nickname, .date {
+    margin: 5px;
+}
+.comment {
+    margin: 10px 20px;
 }
