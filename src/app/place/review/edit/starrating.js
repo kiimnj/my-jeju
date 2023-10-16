@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-export default function StarRating() {
+export default function StarRating({ value, onChange }) {
 //회색 별을 누르면 왼쪽부터 그 지점까지 주황이 되고, 주황 별 개수만큼 점수가 됨
 
-  const [rating, setRating] = useState(0); // 초기 점수는 0
+  const [rating, setRating] = useState(value); // 초기 점수는 0
 
   const handleStarClick = (clickedRating) => {
     setRating(clickedRating);
+    onChange(clickedRating);
   };
 
   const renderStars = () => {
@@ -30,6 +31,7 @@ export default function StarRating() {
 
     return stars;
   };
+  
 
   return (
     <div id="starRating">
@@ -37,6 +39,7 @@ export default function StarRating() {
         {renderStars()}&ensp;
         {rating === 0?<span style={{color:"#d9d9d9"}}>{rating}</span>:<span style={{color:"#000"}}>{rating}</span>}
         </div>
+        <input type='hidden' name='star' value={rating} />
     </div>
   );
 }

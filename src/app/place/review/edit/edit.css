@@ -3,29 +3,31 @@
     bottom: 0px;
 } */
 /* 장소 선택 */
-#selectPlace {
+#selectPlace, #selectedPlaceImg {
     width: 180px;
     height: 180px;
     background-color: #d9d9d9;
     border-radius: 10px;
     border: none;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+#selectPlace {
+    padding: 0;
     margin-top: 50px;
 }
 #selectPlaceLbl {
-    font-size: 15px;
-    color: #d9d9d9;
+    color: rgba(0, 0, 0, 0.5);
     margin: 15px;
+    /* font-weight: bold; */
 }
 
 /* 장소 선택 모달 창 */
 .modal-content, .modal-dialog {
-    position: fixed;
+    position: absolute;
     top: 35px;
     width: 310px;
     height: 580px;
 }
-/* label태그 */
 .signup-profileImg-label {
   margin: 5px 0 20px 0;
   font-weight: bold;
@@ -34,7 +36,6 @@
   display: inline-block;
   cursor: pointer;
 }
-/* input태그 */
 .form-signup input[type="file"] {
   display: none;
 }
@@ -56,6 +57,7 @@
     background-color: #F2A96C;
     border-radius: 30px;
     border: none;
+    margin: 30px;
 }
 #reviewButtonBox {
     height: 50px;
@@ -74,20 +76,20 @@
     border-radius: 10px;
     border: 1px solid #000;
 }
-#reviewText::placeholder {
+/* #reviewText::placeholder {
     color: #d9d9d9;
-}
+} */
 #reviewTextCnts {
     position: absolute;
     bottom: 5px;
     right: 30px;
     font-size: 15px;
-    color: #d9d9d9;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* 이미지 업로드 */
 #imageContainer {
-    /* position: relative; */
+    position: relative;
 }
 #selectImg, .images {
     width: 120px;
@@ -97,23 +99,114 @@
     margin-left: 5px;
     margin-right: 5px;
 }
-#selectImg {
+#selectImg, .imageWrap {
     margin-top: 0;
     margin-bottom: 0;
 }
 #imageSlide {
-    position: relative;
     height: 138px;
     overflow-x: auto;
     white-space: nowrap;
     margin: 23px;
+
+}
+.imageWrap {
+    display: inline-block;
+    position: relative;
+}
+.deleteBtn {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 #imageCnts {
     position: absolute;
-    bottom: 35px;
-    right: 30px;
-    /* top: 0;
-    left: 0; */
+    top: -25px;
+    left: 35px;
     font-size: 15px;
-    color: #d9d9d9;
+    color: rgba(0, 0, 0, 0.5);
 }
+.addMent {
+    position: absolute;
+    bottom: -10px;
+    left: 130px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* 모달 검색창 */
+/* searchItem */
+.modal-body {
+    position: relative;
+}
+#magnifierIcon {
+    position: absolute;
+    top: 29px;
+    left: 32px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.searchItem {
+    position: absolute ;
+    right: 32px;
+}
+input[type=radio] {
+    opacity: 0;
+}
+input[type=radio] + div {
+    position: relative;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 266px;
+    height: 80px;
+    font-size: 14px;
+    margin: 10px;
+}
+input[type=radio]:checked + div {
+    border-color: #F2A96C;
+}
+.searchInfo {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    height: 42px;
+}
+.searchImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin: 10px;
+}
+.searchTitle {
+    text-align: left;
+}
+.searchStar {
+    text-align: left;
+}
+
+
+/* #placeTabWrap {
+    position: relative;
+}
+.placeInfo {
+    position: absolute;
+    top: 25px;
+    display: inline-block;
+}
+#thumb {
+    width: 60px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin: 20px;
+}
+#starRating {
+    margin: 10px;
+} */
