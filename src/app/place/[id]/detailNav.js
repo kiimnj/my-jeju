@@ -17,7 +17,7 @@ export default function DetailNav ({data, comment, avgStar, sum}) {
     let phone = data.phoneno;
     let position = [{title: data.title, lat: data.latitude, lng: data.longitude}];
     let center = {lat: data.latitude, lng: data.longitude};
-    let level = 3;
+    let level = 5;
 
     return (
         <>

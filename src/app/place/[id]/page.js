@@ -62,6 +62,7 @@ export default async function Detail(props) {
 
     return (
         <>
+        
             <img src={data.repPhoto.photoid.imgpath} id="detailImg" width={393} height={400}/>
             <div id="detailContents">
                 <div className="title">

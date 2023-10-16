@@ -1,11 +1,13 @@
 "use client"
 
 import { getData } from "../../util";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Card from "../card";
 import Link from "next/link";
 import Spinner from "@/app/spinner";
-
+import Header from "../header";
+import SideMenu from "../sideMenu";
+import { useSearchParams } from "next/navigation";
 
 
 function Result({isLoaded, error, places}){
@@ -40,12 +42,34 @@ export default function Search() {
     const [places, setPlaces] = useState([]);
     const [isLoaded, setIsLoaded] = useState(true);
     const [error, setError] = useState(null);
+    const params = useSearchParams();
+    const inputEL = useRef();
+
+    useEffect(() => {
+        if(params) {
+            let place = params.get("title")
+            inputEL.current.value = place;
+
+            setError(null);
+            setIsLoaded(false);
+            
+            getData(`${url}&title=${place}`)
+            .then(data => {
+                let items = data.items
+                let newData = items.filter(item => item.alltag != null); // data에서 유효한 데이터만 필터링
+                console.log(newData)
+                setPlaces(newData)
+            })
+            .catch(error => setError(error))
+            .finally(() => setIsLoaded(true))
+        }
+    },[])
 
     const api = process.env.NEXT_PUBLIC_API_KEY
     const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&`
 
     const handleChange = (e) => {
-        const place = e.target.value;
+        let place = e.target.value;
         console.log(`${url}title=${place}`)
     
         if (!place) {
@@ -66,13 +90,29 @@ export default function Search() {
         .finally(() => setIsLoaded(true))
     }
 
+    const inputStyle = {
+        'font-size': '15px',
+        'width': '268px',
+        'height': '40px',
+        'border-radius': '20px',
+        'border': '1px solid #d9d9d9',
+        'padding' : '15px',
+        'marginRight' : '10px'
+    }
+
     return (
-        <div id="search">
-            <input type="text" onChange={handleChange} placeholder="관광지 검색"/>
-            <hr />
-            <Result isLoaded={isLoaded} error={error} places={places}/>
-            
-        </div>
+        <>
+            <div id="search">
+                <div id="search-header">
+                    <input id="searchBar" ref={inputEL} type="text" style={inputStyle} onChange={handleChange} placeholder="장소명을 검색하세요."/>
+                    <i id="magnifierIcon" class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <hr />
+                <div id="cardContainer">
+                    <Result isLoaded={isLoaded} error={error} places={places}/>
+                </div>
+            </div>
+        </>
     )
 
 }

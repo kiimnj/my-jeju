@@ -46,6 +46,14 @@
       "liked": false,
       "visited": false,
       "dateTime": "2023.09.16"
+    },
+    {
+      "id": 4,
+      "userid": "user03",
+      "postid": "CNTS_200000000010937",
+      "liked": true,
+      "visited": true,
+      "dateTime": "2023.09.16"
     }
   ]
 }

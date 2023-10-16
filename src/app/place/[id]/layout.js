@@ -6,7 +6,7 @@ export default function DetailLayout({ children }) {
     let location = "detail"
     return (
         <>
-            <Header location={location}/>  
+            <Header location={location} />
             <div id="detailContainer">
                 {children}
             </div>
