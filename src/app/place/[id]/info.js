@@ -1,6 +1,6 @@
 
 
-export default function Explain({intro, hashTag}) {
+export default function Info({intro, hashTag}) {
 
     return (
         <>

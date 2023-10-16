@@ -19,7 +19,7 @@ export default function Header({location}) {
           
 
           <ul className="nav col-12 col-md-auto justify-content-end mb-md-0">
-            <li><a href="#" className="nav-link px-2 link-secondary"><i className="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a href="/place/search" className="nav-link px-2 link-secondary"><i className="fa-solid fa-magnifying-glass"></i></a></li>
             <li><a href="#" className="nav-link px-2 link-secondary"><i className="fa-regular fa-user"></i></a></li>
             <li><a href="#" className="nav-link px-2 link-secondary"><i className="fa-solid fa-bars"></i></a></li>
           </ul>

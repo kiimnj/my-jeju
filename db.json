@@ -20,20 +20,6 @@
       "star": "3",
       "comment": "리뷰입니다!!!!!!!!33",
       "dateTime": "2023.02.22"
-    },
-    {
-      "id": 4,
-      "userId": "userId4",
-      "star": "3",
-      "comment": "리뷰입니다!!!!!!!!33",
-      "dateTime": "2023.02.22"
-    },
-    {
-      "id": 5,
-      "userId": "userId5",
-      "star": "3",
-      "comment": "리뷰입니다!!!!!!!!33",
-      "dateTime": "2023.02.22"
     }
   ],
   "likevisit": [
@@ -52,6 +38,14 @@
       "liked": false,
       "visited": true,
       "dateTime": "2023.09.13"
+    },
+    {
+      "id": 3,
+      "userid": "user03",
+      "postid": "CNTS_300000000015967",
+      "liked": false,
+      "visited": false,
+      "dateTime": "2023.09.16"
     }
   ]
 }

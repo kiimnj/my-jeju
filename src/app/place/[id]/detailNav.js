@@ -1,16 +1,16 @@
 "use client"
 import { useState } from "react"
 import Review from "./review"
-import Explain from "./explain";
+import Info from "./info";
 import Map from "./map";
 import Contact from "./contact";
 
 export default function DetailNav ({data, comment, avgStar, sum}) {
-    let [on, setOn] = useState("d-explain");
+    let [on, setOn] = useState("d-info");
     let title = data.title;
     let placeId = data.contentsid;
     let intro = data.introduction;
-    let newTag = data.tag.split(",").slice(0, 3);
+    let newTag = data.tag.split(",");
     let hashTag = newTag.map(tag => "#" + tag.trim() + " ");;
     let address = data.address;
     let roadaddress = data.roadaddress;
@@ -23,8 +23,8 @@ export default function DetailNav ({data, comment, avgStar, sum}) {
         <>
             <ul className="nav nav-pills">
                 <li className="nav-item">
-                    <input type="radio" name="nav" id="d-explain" onClick={() => setOn("d-explain")} defaultChecked/>
-                    <label for="d-explain">관광정보</label>
+                    <input type="radio" name="nav" id="d-info" onClick={() => setOn("d-info")} defaultChecked/>
+                    <label for="d-info">관광정보</label>
                 </li>
                 <li className="nav-item">
                     <input type="radio" name="nav" id="d-contact" onClick={() => setOn("d-contact")}/>
@@ -41,7 +41,7 @@ export default function DetailNav ({data, comment, avgStar, sum}) {
             </ul>
 
             <div style={{"padding":"20px 0"}}>
-                {on == "d-explain" && <Explain intro={intro} hashTag={hashTag}/>}
+                {on == "d-info" && <Info intro={intro} hashTag={hashTag}/>}
                 {on == "d-contact" && <Contact address={address} roadaddress={roadaddress} phone={phone}/>}
                 {on == "d-map" && <Map positions={position} center={center} level={level}/>}
                 {on == "d-review" && <Review placeId={placeId} comment={comment} avgStar={avgStar} sum={sum}/>}

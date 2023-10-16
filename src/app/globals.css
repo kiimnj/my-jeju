@@ -15,6 +15,7 @@ a {
 #container {
     width: 393px;
     margin: 0 auto;
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.3);
 }
 .spin180 {
     transform: rotate(180deg);
