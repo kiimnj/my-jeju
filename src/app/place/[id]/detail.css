@@ -131,6 +131,9 @@ dd span {cursor: pointer;}
 }
 
 /* 리뷰 */
-#comment {
+#review {
     border-bottom: 1px solid #ddd;
+}
+.dropdown-item {
+    margin: 0;
 }

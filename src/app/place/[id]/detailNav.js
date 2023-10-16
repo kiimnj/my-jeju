@@ -5,7 +5,7 @@ import Info from "./info";
 import Map from "./map";
 import Contact from "./contact";
 
-export default function DetailNav ({data, comment, avgStar, sum}) {
+export default function DetailNav ({data, review, avgStar, sum}) {
     let [on, setOn] = useState("d-info");
     let title = data.title;
     let placeId = data.contentsid;
@@ -44,7 +44,7 @@ export default function DetailNav ({data, comment, avgStar, sum}) {
                 {on == "d-info" && <Info intro={intro} hashTag={hashTag}/>}
                 {on == "d-contact" && <Contact address={address} roadaddress={roadaddress} phone={phone}/>}
                 {on == "d-map" && <Map positions={position} center={center} level={level}/>}
-                {on == "d-review" && <Review placeId={placeId} comment={comment} avgStar={avgStar} sum={sum}/>}
+                {on == "d-review" && <Review placeId={placeId} review={review} avgStar={avgStar} sum={sum}/>}
             </div>
         </>
     )

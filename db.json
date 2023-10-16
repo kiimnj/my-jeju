@@ -1,10 +1,11 @@
 {
-  "comment": [
+  "review": [
     {
       "id": 1,
       "userId": "userId1",
       "star": "1",
       "comment": "리뷰입니다!!!!!!!!11",
+      "contentsid": "CNTS_300000000015712",
       "dateTime": "2024.02.13"
     },
     {
@@ -12,6 +13,7 @@
       "userId": "userId2",
       "star": "4",
       "comment": "리뷰입니다!!!!!!!!22",
+      "contentsid": "CNTS_300000000015712",
       "dateTime": "2023.11.26"
     },
     {
@@ -19,6 +21,7 @@
       "userId": "userId3",
       "star": "3",
       "comment": "리뷰입니다!!!!!!!!33",
+      "contentsid": "CNTS_300000000015712",
       "dateTime": "2023.02.22"
     }
   ],
