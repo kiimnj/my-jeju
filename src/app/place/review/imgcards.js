@@ -1,7 +1,31 @@
+import { useState } from "react";
+
 export default function ImgCards ({id, title, photo, thumb, tag, script}) {
+    const [imgFile, setImgFile] = useState("");
+
     return (
-        <div style={{"width": "120px", "height": "120px", "flexShrink":"0", "border":"1px solid black"}}>
-            <img src={photo} alt="img"/>
+        <div>
+            {/* <img src={photo} alt="img"/> */}
+            <div id='imageSlide'>
+                <img
+                className='images'
+                src={imgFile}
+                alt=""
+                style={{'width':'120px'}}
+                />
+                <img
+                className='images'
+                src={imgFile}
+                alt=""
+                style={{'width':'120px'}}
+                />
+                <img
+                className='images'
+                src={imgFile}
+                alt=""
+                style={{'width':'120px'}}
+                /> 
+            </div>
         </div>
     )
 }

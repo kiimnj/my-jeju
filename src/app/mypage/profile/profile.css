@@ -1,0 +1,87 @@
+#profileLayout {
+    width: 393px;
+    margin: 0 auto;
+}
+
+/* 배너 */
+#banner {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+}
+#banner::after {
+    content: "banner";
+    font-weight: bold;
+    display: block;
+    transform: translate(270px, -80px);
+}
+
+/* 프로필 이미지 업로드 */
+.profileImg {
+    width: 110px;
+    height: 110px;
+    margin: 10px;
+    border-radius: 100%;
+}
+.signup-profileImg-label {
+    /* margin: 5px 0 20px 0; */
+    font-weight: bold;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    cursor: pointer;
+}
+.signup-profileImg-input[type="file"] {
+    display: none;
+}
+
+/* 입력 칸, 버튼 디자인 */
+.items {
+    /* text-align: center; */
+    margin: 40px;
+}
+.inputWrap {
+    position: relative;
+}
+.label {
+    position: absolute;
+    top: -20px;
+    left: 95px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    align-items: flex-start;
+}
+.labelWrap {
+    width: 240px;
+}
+#email, #emailAuth, #modifyPw {
+    width: 186px;
+}
+/* #modifyPwBtn {
+    padding: 0;
+    width: 50px;
+    background-color: #F2A96C;
+    color: #fff;
+    font-size: 14px;
+} */
+.modifyInput, .modifyBtn, .backBtn  {
+    font-size: 15px;
+    width: 236px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #F2A96C;
+}
+.modifyInput {
+    padding: 0 15px;
+}
+.modifyBtn {
+    background-color: #F2A96C;
+    color: #fff;
+}
+.backBtn {
+    background-color: #fff;
+    color: #F2A96C;
+}
+#gender {
+    width: 80px;
+}

@@ -1,8 +1,10 @@
-export default function CommentForm({contents}) {
+export default function AddComment({contents}) {
   return (
-    <form class='commentForm'>
+    <form id='addComment'>
+      <div id='commentWrap'>
         <input id="commentInput" placeholder='댓글을 입력하세요.'></input>
         <button id="commentButton">게시</button>
+      </div>
     </form>
   )
 }
