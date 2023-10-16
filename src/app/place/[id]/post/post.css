@@ -20,6 +20,10 @@
     margin: 15px;
     /* font-weight: bold; */
 }
+.form-check {
+    height: 360px;
+    overflow-y: auto;
+}
 
 /* 장소 선택 모달 창 */
 .modal-content, .modal-dialog {

@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react'
-import Header from '../header';
+import Header from '../../header';
 import PlaceTab from './placetab';
 import ReviewContainer from './reviewcontainer'
 import CommentsList from './commentslist';
