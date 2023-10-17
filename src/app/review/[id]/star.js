@@ -1,5 +1,5 @@
 
-export default function Star({star}) {
+export default function Star({star, size}) {
 //회색 별을 누르면 왼쪽부터 그 지점까지 주황이 되고, 주황 별 개수만큼 점수가 됨
 
   const renderStars = (num) => {
@@ -24,7 +24,7 @@ export default function Star({star}) {
 
   return (
     <div id="starRating">
-      <div style={{textAlign:'center', fontSize:'27px'}}>
+      <div style={{fontSize:`${size}px`}}>
         {renderStars(star)}&ensp;
         {star === 0?<span style={{color:"#d9d9d9"}}>{star}</span>:<span style={{color:"#000"}}>{star}</span>}
         </div>

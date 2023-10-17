@@ -1,5 +1,5 @@
 
-export default function ReviewFooter({cntComment, cntLike, handleLike}) {
+export default function ReviewFooter({cntComment, allLike, handleLike, likeId}) {
     
 
     return (
@@ -11,8 +11,10 @@ export default function ReviewFooter({cntComment, cntLike, handleLike}) {
                 </div>
 
                 <div className="reviewRecommendWrap" onClick={handleLike}>
-                    <span className="reviewRecommendIcon"><i class="fa-regular fa-thumbs-up"></i></span>
-                    <span className="reviewRecommendCnt">{cntLike}</span>
+                    <span className="reviewRecommendIcon">
+                        {likeId ? <i class="fa-solid fa-thumbs-up"></i> : <i class="fa-regular fa-thumbs-up"></i>}
+                    </span>
+                    <span className="reviewRecommendCnt">{allLike.length}</span>
                 </div>
                 </div>
         </div>

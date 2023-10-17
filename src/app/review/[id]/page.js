@@ -25,7 +25,7 @@ export default async function Review(props) {
   }
   let avg = Math.round(starSum/allReviews.length)
 
-
+console.log(avg)
   // 리뷰 댓글 불러오기
   const commentUrl = `http://localhost:3001/comment?reviewid=${param}`
   const comment = await getData(commentUrl);

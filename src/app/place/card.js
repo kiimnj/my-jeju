@@ -1,9 +1,23 @@
+import { useState, useEffect } from "react";
+import { getData } from "../util";
 
 
 export default function Card ({id, title, photo, thumb, tag, script}) {
     let newTag = tag.split(",").slice(0, 3)
     let hashTag = newTag.map(tag => "#" + tag.trim() + " ");
+
+    const [reviews, setReviews] = useState();
+    const reviewUrl = `http://localhost:3001/review?contentsid=${id}`
+    useEffect(() => {
+      getData(reviewUrl)
+      .then(data => {
+        setReviews(data)
+        console.log(data)
+      })
+    })
+
     // console.log(hashTag)
+
 
     if(title.includes("<")) {
         title = title.substring(0, title.indexOf("<"))
@@ -32,7 +46,14 @@ export default function Card ({id, title, photo, thumb, tag, script}) {
         return stars;
     };
 
-
+    let avg = 0;
+    if(reviews) {
+      let starSum = 0;
+      for(let r of reviews) {
+        starSum += Number(r.star)
+      }
+      avg = Math.round(starSum/reviews.length)
+    }
 
     return (
         
@@ -41,7 +62,7 @@ export default function Card ({id, title, photo, thumb, tag, script}) {
             <div className="card-body">
                 <p className="title">{title}</p>
                 <div className="under">
-                    <p className="star">{renderStars(3)}</p>
+                    <p className="star">{renderStars(avg)}</p>
                     <p className="hashtag">{hashTag}</p>
                 </div>
             </div>

@@ -79,70 +79,6 @@
       "reviewText": "fdyhswea",
       "dateTime": "2023.09.17",
       "id": 9
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "user01",
-      "star": 5,
-      "reviewText": "fdyhswea",
-      "dateTime": "2023.09.17",
-      "id": 10
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "user01",
-      "star": 5,
-      "reviewText": "aSF",
-      "dateTime": "2023.09.17",
-      "id": 11
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "user01",
-      "star": 5,
-      "reviewText": "asdf",
-      "dateTime": "2023.09.17",
-      "id": 12
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "user01",
-      "star": 5,
-      "reviewText": "asdfasdf",
-      "dateTime": "2023.09.17",
-      "id": 13
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "userId2",
-      "star": 5,
-      "reviewText": "uoy",
-      "dateTime": "2023.09.17",
-      "id": 14
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "userId2",
-      "star": 5,
-      "reviewText": "adsfasdfasdf",
-      "dateTime": "2023.09.17",
-      "id": 15
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "userId2",
-      "star": 5,
-      "reviewText": "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅇㄻㄴㅇㄹ",
-      "dateTime": "2023.09.17",
-      "id": 16
-    },
-    {
-      "contentsid": "CNTS_000000000020353",
-      "userid": "userId2",
-      "star": 0,
-      "reviewText": "asdf",
-      "dateTime": "2023.09.17",
-      "id": 17
     }
   ],
   "likevisit": [
@@ -220,18 +156,6 @@
       "reviewid": 1,
       "dateTime": "2023.09.17",
       "id": 6
-    },
-    {
-      "userid": "user01",
-      "reviewid": 3,
-      "dateTime": "2023.09.17",
-      "id": 7
-    },
-    {
-      "userid": "user01",
-      "reviewid": 3,
-      "dateTime": "2023.09.17",
-      "id": 8
     }
   ]
 }
