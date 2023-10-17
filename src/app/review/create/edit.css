@@ -59,9 +59,9 @@
     border: none;
     margin: 30px;
 }
-#reviewButtonBox {
+/* #reviewButtonBox {
     height: 50px;
-}
+} */
 
 /* 리뷰 내용 입력 */
 #reviewTextBox {
