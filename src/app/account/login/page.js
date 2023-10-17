@@ -1,7 +1,7 @@
 import Header from '../accheader'
 import LoginForm from './loginform'
 import AccountManage from './accountmanage'
-import KakaoLogin from './kakaologin'
+import LoginKakao from './kakaologin'
 
 
 export default function Login() {
@@ -15,7 +15,7 @@ export default function Login() {
           <LoginForm />
           <AccountManage />
           <div class="hr-sect">OR</div>
-          <KakaoLogin />
+          <LoginKakao />
         </div>
       </div>
     )

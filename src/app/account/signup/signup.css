@@ -71,12 +71,15 @@
 #email, #emailAuth {
     width: 186px;
 }
-#authBtn {
+.authBtn {
     padding: 0;
     width: 50px;
-    background-color: #F2A96C;
-    color: #fff;
+    height: 40px;
     font-size: 14px;
+    color: #fff;
+    background-color: #F2A96C;
+    border: 1px solid #F2A96C;
+    border-radius: 20px;
 }
 .signupInput, .signupBtn {
     font-size: 15px;
