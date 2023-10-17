@@ -11,7 +11,7 @@ export default function Home() {
       <div id='background'>
         <img width={393} height={852} src='/home.PNG'></img>
         <div class="initBtn">
-          <a href="/place">place</a>
+          <a href="/place">GO!</a>
         </div>
       </div>
     </div>
