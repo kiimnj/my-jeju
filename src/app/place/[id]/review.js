@@ -59,25 +59,27 @@ export default function Review({placeId, review, sum}) {
                     <BarGraph review={review}/>
                 </div>
             </div>
-            <div className="dropdown">
-                <button className="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {sort == "recent" && "최신등록순"}
-                {sort == "starDesc" && "별점높은순"}
-                {sort == "starAsc" && "별점낮은순"}
-                </button>
-                <ul className="dropdown-menu">
-                    <li><p className="dropdown-item" onClick={() => setSort("recent")}>최신등록순</p></li>
-                    <li><p className="dropdown-item" onClick={() => setSort("starDesc")}>별점높은순</p></li>
-                    <li><p className="dropdown-item" onClick={() => setSort("starAsc")}>별점낮은순</p></li>
-                </ul>
+            <div>
+                <div className="dropdown">
+                    <button className="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {sort == "recent" && "최신등록순"}
+                    {sort == "starDesc" && "별점높은순"}
+                    {sort == "starAsc" && "별점낮은순"}
+                    </button>
+                    <ul className="dropdown-menu">
+                        <li><p className="dropdown-item" onClick={() => setSort("recent")}>최신등록순</p></li>
+                        <li><p className="dropdown-item" onClick={() => setSort("starDesc")}>별점높은순</p></li>
+                        <li><p className="dropdown-item" onClick={() => setSort("starAsc")}>별점낮은순</p></li>
+                    </ul>
+                </div>
+                <a href="/review/create"><i class="fa-solid fa-pencil"></i>리뷰 작성하기</a>
             </div>
-
             {review.map((item) => (
                 <div id="review">
                     <p className="small-font">{renderStars(item.star)}</p>
                     <p>{item.userId} | {item.dateTime}</p>
                     <p>
-                        {item.comment} 
+                        {item.reviewText} 
                         <Link href={"/review/" + item.id} className="small-font"> ...더보기</Link>
                     </p>
                 </div>

@@ -27,7 +27,7 @@ export default function ReviewContainer({review, cntComment}) {
     return (
         <div class="">
             <div id='reviewContainer'>
-            <Star id="star" />
+            <Star id="star" star={review.star} />
             <ReviewHeader name={review.userid} dateTime={review.dateTime}/>
 
             <div className='reviewText'>{review.comment}</div>

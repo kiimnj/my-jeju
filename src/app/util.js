@@ -1,4 +1,4 @@
-// 지금 시간 입력
+// 시간 형식 맞추는 함수
 function dateTimeFormmat(dateTime) {
     let date = 0;
     if(dateTime.getDate() < 10) {
@@ -25,7 +25,7 @@ const now = dateTimeFormmat(new Date());
 
 // 데이터 불러오기
 export async function getData(url) {
-    const res = await fetch (`${url}`);
+    const res = await fetch (url, {cache:'no-cache'});
         
     if(!res.ok) {
         throw new Error(`${res.status} ${res.statusText}`)
@@ -79,6 +79,28 @@ export async function putLikeVisit(url, id, userid, liked, visited, postid) {
         throw new Error(`${res.status} ${res.statusText}`)
     } else{
         alert("좋아요!")
+    }
+
+    return await res.json();
+}
+
+// 리뷰 추가
+export async function addReview(url, contentsid, userid, star, reviewText) {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ 
+        contentsid:contentsid, 
+        userid:userid, 
+        star:star, 
+        reviewText:reviewText,
+        dateTime: now
+        }),
+        
+    });
+
+    if(!res.ok) {
+        throw new Error(`${res.status} ${res.statusText}`)
     }
 
     return await res.json();

@@ -9,7 +9,7 @@ export default function Comment({comment, param}) {
     const [commentList, setCommentList] = useState(comment)
 
     const url = "http://localhost:3001/comment"
-    console.log(commentList)
+    // console.log(commentList)
   
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -10,7 +10,7 @@ export default function ReviewHeader({name, dateTime}) {
                 <span class='date'>{dateTime}</span>
             </div>
             <div id='reviewEdit'>
-                <span><Link href='/place/review/edit'>수정</Link>  |  삭제</span>
+                <span><Link href='/review/create'>수정</Link>  |  삭제</span>
             </div>
         </div>
     )

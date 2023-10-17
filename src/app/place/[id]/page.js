@@ -9,16 +9,17 @@ export default async function Detail(props) {
     const param = props.params.id
     const api = process.env.NEXT_PUBLIC_API_KEY
     const url = `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${api}&locale=kr&cid=${param}`
-    const reviewUrl = 'http://localhost:3001/review'
+    const reviewUrl = `http://localhost:3001/review?contentsid=${param}`
 
 
     // 관광지 정보
     const resp = await getData(url)
     const data = resp.items[0]
-    console.log(data)
+    // console.log(data)
 
     // 해당 관광지에 대한 리뷰
-    const review = await getData(`${reviewUrl}?contentsid=${param}`)
+    const review = await getData(reviewUrl)
+    console.log(review.length)
 
     // 별점 총 합계
     let sum = 0;
@@ -48,6 +49,7 @@ export default async function Detail(props) {
     };
 
     let avg = parseInt(sum / review.length);
+    console.log({param})
 
     return (
         <>

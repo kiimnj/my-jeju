@@ -99,6 +99,7 @@ dd span {cursor: pointer;}
     justify-content: space-between;
     padding-bottom: 20px;
 }
+
 #average > div {
     text-align: center;
 }
@@ -121,7 +122,6 @@ dd span {cursor: pointer;}
 
 /* 리뷰 정렬 셀렉트 */
 .dropdown {
-    border-bottom: 1px solid #ddd;
     padding: 10px 0;
 }
 .dropdown-toggle {
@@ -131,6 +131,16 @@ dd span {cursor: pointer;}
 }
 
 /* 리뷰 */
+#average+div {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+#average+div a {
+    padding: 10px 0;
+    color: black;
+    cursor: pointer;
+}
 #review {
     border-bottom: 1px solid #ddd;
 }

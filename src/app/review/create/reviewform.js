@@ -3,25 +3,23 @@ import ReviewText from './reviewtext'
 import AddImg from './addimg'
 import StarRating from './starrating'
 import SelectPlace from './selectplace'
+import { addReview } from '@/app/util'
+import { useRouter } from 'next/navigation'
 
 export default function ReviewForm() {
   const [seletedPlaceId, setSeletedPlaceId] = useState('');
   const [star, setStar] = useState(0);
   const [reviewText, setReviewText] = useState('');
+  const reviewUrl = "http://localhost:3001/review"
+  let router = useRouter();
 
   const handleCreate = async (evt) => {
     evt.preventDefault();
-    const resp = await fetch(`http://localhost:9999/items`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ seletedPlaceId, star, reviewText }),
-    });
-    const items = await resp.json();
-    // console.log('Created items:', items);
-    // router.push(`/read/${topic.id}`);
-    // router.refresh();
+
+    addReview(reviewUrl, seletedPlaceId, "userId2", star, reviewText)
+    .then((data) => console.log(data));
+
+    router.replace(`/place/${seletedPlaceId}`)
   };
 
   return (
