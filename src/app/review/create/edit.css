@@ -3,6 +3,9 @@
     bottom: 0px;
 } */
 /* 장소 선택 */
+.modal-body {
+    overflow-y: auto;
+}
 #selectPlace, #selectedPlaceImg {
     width: 180px;
     height: 180px;
