@@ -66,7 +66,7 @@ p.profileTabNick {
 }
 
 .myPageIcon {
-    color: #d9d9d9;
+    color: rgba(0,0,0,0.5);
     margin: 0 10px;
 }
 .myPageLink {

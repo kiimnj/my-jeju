@@ -1,3 +1,4 @@
+"use client"
 import SignupForm from './signupform'
 
 export default function Signup() {
