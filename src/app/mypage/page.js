@@ -1,6 +1,7 @@
 import ProfileTab from './profiletab'
 import MyPageList from './mypagelist'
 
+
 export default function MyPage() {
 
     return (

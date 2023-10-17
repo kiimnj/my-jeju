@@ -79,6 +79,14 @@
       "reviewText": "fdyhswea",
       "dateTime": "2023.09.17",
       "id": 9
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "userId2",
+      "star": 3,
+      "reviewText": "리뷰입니다.",
+      "dateTime": "2023.09.17",
+      "id": 12
     }
   ],
   "likevisit": [
@@ -142,6 +150,20 @@
       "comment": "ㅁㅁ",
       "dateTime": "2023.09.17",
       "id": 15
+    },
+    {
+      "userid": "user02",
+      "reviewid": "12",
+      "comment": "ㅁㅁ",
+      "dateTime": "2023.09.17",
+      "id": 16
+    },
+    {
+      "userid": "user02",
+      "reviewid": "12",
+      "comment": "ㅁㅁㅇㄼㅈㄷㄱ",
+      "dateTime": "2023.09.17",
+      "id": 17
     }
   ],
   "reviewlike": [
@@ -156,6 +178,24 @@
       "reviewid": 1,
       "dateTime": "2023.09.17",
       "id": 6
+    },
+    {
+      "userid": "user01",
+      "reviewid": 12,
+      "dateTime": "2023.09.17",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "11111111",
+      "id": 1
+    },
+    {
+      "email": "test@test.com",
+      "password": "1111111111",
+      "id": 2
     }
   ]
 }

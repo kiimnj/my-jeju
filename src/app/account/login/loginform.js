@@ -1,27 +1,49 @@
 "use client";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export default function LoginForm() {
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    let userInfo = localStorage.getItem("user")
+    if(userInfo) {
+      router.push('/place');
+    }
+  }, [user])
+
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  async function handleLogin() {
+  async function handleLogin(e) {
+    e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3001/users");
-      const data = await response.json();
+        const response = await fetch("http://localhost:3001/users");
+        const data = await response.json();
 
-      const user = data.find((user) => user.email === email && user.password === password);
+        const user = data.find((user) => user.email === email && user.password === password);
+        
+        if (user) {
+          setMessage("로그인 되었습니다.");
+          localStorage.setItem("user", email)
+          router.replace('/place')
+        }
 
-      if (user) {
-        setMessage("로그인 되었습니다.");
-      } else {
+      } catch (error) {
         setMessage("비밀번호가 일치하지 않습니다.");
+
+      } finally {
+        if(message != "") {
+          alert(message)
+        }
       }
-    } catch (error) {
-      setMessage("Error !");
-    }
-  };
+    };
+
+
     return (
       <div id="loginFormContainer">
             {message}

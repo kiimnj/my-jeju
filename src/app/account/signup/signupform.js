@@ -1,6 +1,6 @@
 'use client'
 import UploadProfileImg from './uploadprofileimg'
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 // import { useRouter } from 'next/router';
 
 export default function SignupForm() {
@@ -18,7 +18,8 @@ export default function SignupForm() {
 
     // const router = useRouter();
 
-    const handleSignup = async () => {
+    const handleSignup = async (e) => {
+        e.preventDefault();
         try {
             const response = await fetch("http://localhost:3001/users", {
             method: "POST",
@@ -31,15 +32,17 @@ export default function SignupForm() {
             if (response.ok) {
             setMessage("회원가입 되었습니다.");
             // router.push('http://localhost:3000/place');
-            alert(message);
             } else {
             setMessage("이메일과 비밀번호를 다시 확인해주세요.");
-            alert(message);
             }
         } catch (error) {
             setMessage("Error !");
-            alert(message);
+        } finally {
+            if(message != "") {
+                alert(message);
+            }
         }
+
     };
 
     const validateEmail = (email) => {
@@ -68,16 +71,16 @@ export default function SignupForm() {
     const isNicknameValid = validateNickname(nickname);
 
 
-       //이메일 
-  const onChangeEmail = useCallback( async (e) => {
-    const currEmail = e.target.value;
-    setEmail(currEmail);
+    //이메일 
+    const onChangeEmail = useCallback( async (e) => {
+        const currEmail = e.target.value;
+        setEmail(currEmail);
 
-    if (!validateEmail(currEmail)) {
-      setEmailMsg("이메일 형식이 올바르지 않습니다.")
-    } else {
-        setEmailMsg("올바른 이메일 형식입니다.")
-      }
+        if (!validateEmail(currEmail)) {
+        setEmailMsg("이메일 형식이 올바르지 않습니다.")
+        } else {
+            setEmailMsg("올바른 이메일 형식입니다.")
+        }
     })
 
     //비밀번호
@@ -119,20 +122,20 @@ export default function SignupForm() {
     const [checkMail, setCheckMail] = useState(false)
     const [checkNickname, setCheckNickname] = useState(false)
 
+
     const onCheckEmail = async (e) => {
         e.preventDefault();
 
         try { 
-            const resp = await fetch(`http://localhost:3001/users/email`, {
-                method: 'POST',
+            const resp = await fetch(`http://localhost:3001/users?email=${email}`, {
+                method: 'GET',
                 headers: {
                 'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email }),
+                }
             });
             const result = await resp.json();
 
-        if (!result) {
+        if (result.length > 0) {
             setEmailMsg("이미 등록된 이메일입니다. 다시 입력해주세요.");
             setCheckMail(false);
         } else {
@@ -194,7 +197,7 @@ export default function SignupForm() {
                         <button className="authBtn">인증</button>
                     {/* 본인 인증을 하면 중복 확인까지 해주기 */}
                     </div>
-                    <div className={isEmailValid ? 'success' : 'error'}>{emailMsg}</div>
+                    <div className={isEmailValid ? 'success' : 'error'}>{emailMsg != "" && emailMsg}</div>
                 </div>
 
                 <div className='inputWrap'>
@@ -208,9 +211,9 @@ export default function SignupForm() {
                 </div>
                 
                 <div className='inputWrap'>
-                <div className='labelWrap'>
-                    <label className="label">비밀번호</label>
-                </div>
+                    <div className='labelWrap'>
+                        <label className="label">비밀번호</label>
+                    </div>
                     <div className='items'>
                         <input 
                             id="pw" 

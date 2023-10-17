@@ -2,10 +2,16 @@
 import Image from 'next/image';
 import logo from '/public/logo.png';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SideMenu from './sideMenu';
 
 export default function Header({location}) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    let userInfo = localStorage.getItem("user")
+    setUser(userInfo);
+  }, [user])
 
   let router = useRouter();
   let [on, setOn] = useState(false);
@@ -22,7 +28,7 @@ export default function Header({location}) {
 
         <ul className="nav col-12 col-md-auto justify-content-end mb-md-0">
           <li><a href="/place/search" className="nav-link px-2 link-secondary"><i className="fa-solid fa-magnifying-glass"></i></a></li>
-          <li><a href="#" className="nav-link px-2 link-secondary"><i className="fa-regular fa-user"></i></a></li>
+          <li><a href={user ? "/mypage" : "/account/login"} className="nav-link px-2 link-secondary"><i className="fa-regular fa-user"></i></a></li>
           <li onClick={() => setOn(!on)}><a className="nav-link px-2 link-secondary"><i className="fa-solid fa-bars"></i></a></li>
         </ul>
         <SideMenu setOn={setOn} on={on} />

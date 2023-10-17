@@ -1,6 +1,22 @@
+"use client"
 import Link from "next/link";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function MyPageList() {
+
+    const [user, setUser] = useState(null);
+    let router = useRouter();
+
+    useEffect(() => {
+      let userInfo = localStorage.getItem("user")
+      setUser(userInfo);
+    }, [user])
+
+    const logout = () => {
+        localStorage.removeItem("user")
+        router.replace('/account/login')
+    }
 
     return (
         <div id="myPageListContainer">
@@ -31,7 +47,7 @@ export default function MyPageList() {
 
             <div className="myPageLists">
                 <i class="fa-solid fa-right-from-bracket myPageIcon"></i>
-                <Link className='myPageLink' href='#'>로그아웃</Link>
+                <span className='myPageLink' onClick={logout}>로그아웃</span>
             </div>
         </div>
     )

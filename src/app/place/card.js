@@ -12,7 +12,7 @@ export default function Card ({id, title, photo, thumb, tag, script}) {
       getData(reviewUrl)
       .then(data => {
         setReviews(data)
-        console.log(data)
+        // console.log(data)
       })
     })
 

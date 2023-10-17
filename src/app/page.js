@@ -8,8 +8,12 @@ export default function Home() {
 
   return (
     <div id='container'>
-      <h1>Home</h1>
-      <Link href="/place">place</Link>
+      <div id='background'>
+        <img width={393} height={852} src='/home.PNG'></img>
+        <div class="initBtn">
+          <a href="/place">place</a>
+        </div>
+      </div>
     </div>
   )
 }
