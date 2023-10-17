@@ -5,11 +5,14 @@ import PlaceTab from './placetab';
 import ReviewContainer from './reviewcontainer'
 import CommentsList from './commentslist';
 import AddComment from './addcomment'
+import '../place.css';
+import './review.css';
 
 
-export default function Review() {
-    return (
-      <div>
+export default function Review(props) {
+  const id = props.params.id;
+  return (
+      <div id="reviewContainer">
         <Header />
         <PlaceTab />
         <ReviewContainer />

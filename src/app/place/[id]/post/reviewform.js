@@ -4,14 +4,15 @@ import AddImg from './addimg'
 import StarRating from './starrating'
 import SelectPlace from './selectplace'
 
-export default function ReviewForm() {
+export default function ReviewForm({props}) {
   const [seletedPlaceId, setSeletedPlaceId] = useState('');
   const [star, setStar] = useState(0);
   const [reviewText, setReviewText] = useState('');
+  const id = props.params.id;
 
   const handleCreate = async (evt) => {
     evt.preventDefault();
-    const resp = await fetch(`http://localhost:9999/items`, {
+    const resp = await fetch(`http://localhost:3001/post`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
