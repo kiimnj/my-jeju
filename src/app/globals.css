@@ -1,3 +1,4 @@
+*{box-sizing: border-box;}
 ul, ol, dl {
     list-style: none; 
     margin: 0; 
@@ -10,4 +11,89 @@ hr {
 }
 a {
     text-decoration: none !important;
+    color: #000;
+}
+#container {
+    width: 393px;
+    margin: 0 auto;
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+.spin180 {
+    transform: rotate(180deg);
+}
+
+/*sideMenu */
+.back {
+    width: 393px;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    right: -393px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    z-index: 5;    
+}
+#sideMenu {
+    width: 300px;
+    margin-left: 93px;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+}
+#sideMenu div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+#sideMenu p {
+    padding-top: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+#sideMenu p:nth-of-type(2) {
+    margin-bottom: 20px;
+}
+
+#sideMenu dl {height: 50px;}
+#sideMenu dt {
+    width: 50px;
+    display: inline-block;
+}
+#sideMenu dd {
+    width: 200px;
+    float: right;
+}
+
+.dropdown button {
+    background-color: transparent;
+    border: none;
+}
+
+/* 검색창 */
+#search-header {
+    text-align: center;
+    padding: 15px;
+}
+#search-header input {
+    font-size: 15px;
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    padding-left : 15px;
+    margin-right: 10px;
+}
+#datas {
+    width: 200px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 10;
+}
+.data {
+    padding: 10px;
+    font-size: 13px;
+}
+.data:hover {
+    background-color: #d9d9d9;
 }

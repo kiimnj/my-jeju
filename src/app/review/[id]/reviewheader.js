@@ -1,16 +1,16 @@
 import Link from "next/link";
 
-export default function ReviewHeader() {
+export default function ReviewHeader({name, dateTime}) {
     return (
         <div class="reviewHeader">
             <div id='reviewInfo'>
                 <img id="commentProfile" src="/profile.png" alt="Img" />
-                <span class='nickname'>닉네임</span>
+                <span class='nickname'>{name}</span>
                 <span>|</span>
-                <span class='date'>2023.03.03</span>
+                <span class='date'>{dateTime}</span>
             </div>
             <div id='reviewEdit'>
-                <span><Link href='/place/review/edit'>수정</Link>  |  삭제</span>
+                <span><Link href='/review/create'>수정</Link>  |  삭제</span>
             </div>
         </div>
     )

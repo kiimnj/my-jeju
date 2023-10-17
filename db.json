@@ -1,0 +1,237 @@
+{
+  "review": [
+    {
+      "id": 1,
+      "userid": "userId1",
+      "star": 1,
+      "reviewText": "리뷰입니다!!!!!!!!11",
+      "contentsid": "CNTS_300000000015712",
+      "dateTime": "2024.02.13"
+    },
+    {
+      "id": 2,
+      "userid": "userId2",
+      "star": 4,
+      "reviewText": "리뷰입니다!!!!!!!!22",
+      "contentsid": "CNTS_300000000015712",
+      "dateTime": "2023.11.26"
+    },
+    {
+      "id": 3,
+      "userid": "userId3",
+      "star": 3,
+      "reviewText": "리뷰입니다!!!!!!!!33",
+      "contentsid": "CNTS_200000000012540",
+      "dateTime": "2023.02.22"
+    },
+    {
+      "id": 11,
+      "userid": "user113",
+      "star": "3",
+      "reviewText": "리뷰입니다!!!!!!!!33",
+      "contentsid": "CNTS_200000000012540",
+      "dateTime": "2023.02.22"
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "ㅁㅁ",
+      "dateTime": "2023.09.17",
+      "id": 4
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "ㅁ",
+      "dateTime": "2023.09.17",
+      "id": 5
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "ㅐㅑㅕㅛ",
+      "dateTime": "2023.09.17",
+      "id": 6
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "asdfjg",
+      "dateTime": "2023.09.17",
+      "id": 7
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "asdfjg",
+      "dateTime": "2023.09.17",
+      "id": 8
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "fdyhswea",
+      "dateTime": "2023.09.17",
+      "id": 9
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "fdyhswea",
+      "dateTime": "2023.09.17",
+      "id": 10
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "aSF",
+      "dateTime": "2023.09.17",
+      "id": 11
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "asdf",
+      "dateTime": "2023.09.17",
+      "id": 12
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "user01",
+      "star": 5,
+      "reviewText": "asdfasdf",
+      "dateTime": "2023.09.17",
+      "id": 13
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "userId2",
+      "star": 5,
+      "reviewText": "uoy",
+      "dateTime": "2023.09.17",
+      "id": 14
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "userId2",
+      "star": 5,
+      "reviewText": "adsfasdfasdf",
+      "dateTime": "2023.09.17",
+      "id": 15
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "userId2",
+      "star": 5,
+      "reviewText": "ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅇㄻㄴㅇㄹ",
+      "dateTime": "2023.09.17",
+      "id": 16
+    },
+    {
+      "contentsid": "CNTS_000000000020353",
+      "userid": "userId2",
+      "star": 0,
+      "reviewText": "asdf",
+      "dateTime": "2023.09.17",
+      "id": 17
+    }
+  ],
+  "likevisit": [
+    {
+      "id": 1,
+      "userid": "user02",
+      "postid": "CNTS_300000000015712",
+      "liked": false,
+      "visited": true,
+      "dateTime": "2023.09.13"
+    },
+    {
+      "userid": "user03",
+      "postid": "CNTS_300000000015724",
+      "liked": false,
+      "visited": true,
+      "dateTime": "2023.09.17",
+      "id": 2
+    },
+    {
+      "userid": "user03",
+      "postid": "CNTS_200000000012540",
+      "liked": false,
+      "visited": true,
+      "dateTime": "2023.09.17",
+      "id": 3
+    }
+  ],
+  "comment": [
+    {
+      "id": 1,
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "좋은 리뷰 감사합니다!!11",
+      "dateTime": "2023.09.13"
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "조용!",
+      "dateTime": "2023.09.16",
+      "id": 5
+    },
+    {
+      "userid": "user02",
+      "reviewid": "1",
+      "comment": "hi!",
+      "dateTime": "2023.09.16",
+      "id": 6
+    },
+    {
+      "userid": "user02",
+      "reviewid": "3",
+      "comment": "댓글댓글",
+      "dateTime": "2023.09.17",
+      "id": 14
+    },
+    {
+      "userid": "user02",
+      "reviewid": "2",
+      "comment": "ㅁㅁ",
+      "dateTime": "2023.09.17",
+      "id": 15
+    }
+  ],
+  "reviewlike": [
+    {
+      "id": 1,
+      "userid": "user02",
+      "reviewid": 3,
+      "dateTime": "2023.09.13"
+    },
+    {
+      "userid": "user01",
+      "reviewid": 1,
+      "dateTime": "2023.09.17",
+      "id": 6
+    },
+    {
+      "userid": "user01",
+      "reviewid": 3,
+      "dateTime": "2023.09.17",
+      "id": 7
+    },
+    {
+      "userid": "user01",
+      "reviewid": 3,
+      "dateTime": "2023.09.17",
+      "id": 8
+    }
+  ]
+}

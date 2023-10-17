@@ -1,0 +1,149 @@
+#detailContainer {
+    width: 100%;
+}
+
+#detailImg {
+    object-fit: cover;    
+}
+#detailContents{
+    padding: 0 20px;
+}
+
+/*  */
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.title p {
+    margin: 0;
+}
+.info p:first-of-type {
+    padding: 0;    
+}
+.info h5 {
+    font-weight: 700;
+}
+#likevisit {
+    display: flex;
+    font-size: 15px;
+    font-weight: 100;
+    gap: 10px;
+    color: #F2A96C;
+}
+#likevisit svg {
+    width: 40px;
+    height: 25px;
+}
+#likevisit svg:first-child {
+    padding-right: 10px;
+    border-right: 1px solid #ddd
+}
+
+/* 상세 메뉴 바*/
+input[type='radio'] {
+    display: none;
+}
+input[type='radio']:checked+label {
+    border-bottom: 3px solid orange
+}
+#detailContents .nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 관광 정보 */
+.big-font {
+    font-size: 20px;
+}
+#intro {
+    text-align: center;
+}
+#explain {
+    background-color: #f5f5f5;
+    box-shadow: 0 0 10px 5px white inset;
+    padding: 0 10px;
+}
+.quote-right {
+    text-align: end;
+}
+.tag {
+    color: #F2A96C;
+    text-decoration: underline;
+}
+
+/* 연락처 */
+dl {height: 50px;}
+dt {
+    width: 50px;
+    display: inline-block;
+}
+dd {
+    width: 250px;
+    float: right;
+}
+dd span {cursor: pointer;}
+.address-modal {
+    position: absolute;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    padding: 5px;
+}
+
+/* 리뷰 평균 별점 */
+#average {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+#average > div {
+    text-align: center;
+}
+.progress {
+    width: 150px;
+    height: 7px !important;
+}
+.progress-bar {
+    height: 5px !important;
+}
+.graph {
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+}
+.graph p {
+    margin: 0;
+    padding: 0 5px;
+}
+
+/* 리뷰 정렬 셀렉트 */
+.dropdown {
+    padding: 10px 0;
+}
+.dropdown-toggle {
+    padding: 0;
+    background-color: white !important;
+    border: none;
+}
+
+/* 리뷰 */
+#average+div {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+#average+div a {
+    padding: 10px 0;
+    color: black;
+    cursor: pointer;
+}
+#review {
+    border-bottom: 1px solid #ddd;
+}
+.dropdown-item {
+    margin: 0;
+}
