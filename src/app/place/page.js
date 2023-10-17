@@ -92,11 +92,11 @@ export default function Index() {
             </div>
 
             <ul id="quick" className="nav">
-                <li><div className="qmenu" ></div> <p className="small-font">공지사항</p></li>
-                <li><div className="qmenu"></div> <p className="small-font">커뮤니티</p></li>
-                <li><div className="qmenu"></div> <p className="small-font">나의지도</p></li>
-                <li><div className="qmenu"></div> <p className="small-font">고객센터</p></li>
-                <li><div className="qmenu"></div> <p className="small-font">공지사항</p></li>
+                <li><img src='bong.png' className="qmenu"/><p className="small-font">공지사항</p></li>
+                <li><img src='dol.png' className="qmenu"/><p className="small-font">커뮤니티</p></li>
+                <li><img src='sign.png' className="qmenu"/><p className="small-font">나의지도</p></li>
+                <li><img src='bong.png' className="qmenu"/><p className="small-font">고객센터</p></li>
+                <li><img src='dol.png' className="qmenu"/><p className="small-font">공지사항</p></li>
             </ul>
 
             <hr/>

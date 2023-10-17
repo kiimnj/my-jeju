@@ -33,7 +33,6 @@
 .qmenu {
     width: 60px;
     height: 60px;
-    background-color: #d9d9d9;
     border-radius: 10%;
 }
 #quick li:first-child {
